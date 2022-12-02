@@ -33,6 +33,7 @@
 		B4EB406B29389EE100520181 /* ResultsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB406A29389EE100520181 /* ResultsRootView.swift */; };
 		B4EB406D2938A17B00520181 /* GameRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB406C2938A17B00520181 /* GameRootView.swift */; };
 		B4EB406F2938AB0400520181 /* EasyQuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB406E2938AB0400520181 /* EasyQuestionStrategy.swift */; };
+		B4EB407C2939E81500520181 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB407B2939E81500520181 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		B4EB406A29389EE100520181 /* ResultsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRootView.swift; sourceTree = "<group>"; };
 		B4EB406C2938A17B00520181 /* GameRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRootView.swift; sourceTree = "<group>"; };
 		B4EB406E2938AB0400520181 /* EasyQuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyQuestionStrategy.swift; sourceTree = "<group>"; };
+		B4EB407B2939E81500520181 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				B4B303E82932C7970053B91A /* Game.swift */,
 				B4B303E029328DA80053B91A /* QuestionData.swift */,
 				B4B303DE29328ADF0053B91A /* Question.swift */,
+				B4EB407B2939E81500520181 /* Observable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				B4B303DF29328ADF0053B91A /* Question.swift in Sources */,
 				B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */,
 				B4B303F52934A3690053B91A /* SettingsViewController.swift in Sources */,
+				B4EB407C2939E81500520181 /* Observable.swift in Sources */,
 				B4B303C12931F70C0053B91A /* AppDelegate.swift in Sources */,
 				B4B303F32933974E0053B91A /* Result+CoreDataProperties.swift in Sources */,
 				B4B303FB2934FB120053B91A /* MediumQuestionStrategy.swift in Sources */,
