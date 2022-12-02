@@ -52,6 +52,14 @@ class GameViewController: UIViewController {
     }
 
     func configureUI(question: Question){
+        currentResults.session?.currentQuestionNumber.addObserver(self, options: [.new, .initial], closure: {
+        [weak self] (numberOfQuestion, _) in
+            self?.rootView.questionNumberLabel.text = "Question №\(numberOfQuestion)"
+        })
+        currentResults.session?.procent.addObserver(self, options: [.new, .initial], closure: {
+        [weak self] (procent, _) in
+            self?.rootView.correctAnswerProcentLabel.text = "Success: \(procent)%"
+        })
         rootView.questionLabel.text = question.text
         currentQuestion = question
     }
@@ -59,7 +67,6 @@ class GameViewController: UIViewController {
     private func checkAnswer( answer: Answer, question: Question) -> Bool {
         return question.answers.contains(where: { $0.text == answer.text } ) && answer.isCorrect
     }
-
 }
 
 extension GameViewController: UITableViewDelegate, UITableViewDataSource {
@@ -92,6 +99,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 if index < questionsWithStrategy.count - 1 {
                     let nextQuestion = questionsWithStrategy[index + 1]
+                    currentResults.session?.currentQuestionNumber.value += 1
+                    currentResults.session?.procent.value = currentResults.corAnswerProcent(correctAnswerCount: corAnswer, totalQuestionCount: questionsWithStrategy.count)
                     configureUI(question: nextQuestion)
                     tableView.reloadData()
                 }
@@ -103,8 +112,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     )
                     )
-                    let procent =  currentResults.corAnswerProcent(correctAnswerCount: corAnswer, totalQuestionCount: questionsWithStrategy.count)
-                    gameDelegate?.didEndGame(withResult: Results(procent: procent, correctAnswerCount: corAnswer))
+                    currentResults.session?.procent.value = currentResults.corAnswerProcent(correctAnswerCount: corAnswer, totalQuestionCount: questionsWithStrategy.count)
+                    gameDelegate?.didEndGame(withResult: Results(procent: currentResults.session?.procent.value, correctAnswerCount: corAnswer))
                     present(alert, animated: true)
                     corAnswer = 0
                     currentQuestion = questionsWithStrategy[0]
@@ -118,8 +127,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             )
             )
-            let procent =  currentResults.corAnswerProcent(correctAnswerCount: corAnswer, totalQuestionCount: questionsWithStrategy.count)
-            gameDelegate?.didEndGame(withResult: Results(procent: procent, correctAnswerCount: corAnswer))
+            gameDelegate?.didEndGame(withResult: Results(procent: currentResults.session?.procent.value, correctAnswerCount: corAnswer))
             present(alert, animated: true)
             corAnswer = 0
             currentQuestion = questionsWithStrategy[0]
