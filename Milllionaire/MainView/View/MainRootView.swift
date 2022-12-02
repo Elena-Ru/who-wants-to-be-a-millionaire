@@ -1,22 +1,29 @@
 //
-//  ViewController.swift
+//  MainRootView.swift
 //  Milllionaire
 //
-//  Created by Елена Русских on 26.11.2022.
+//  Created by Елена Русских on 01.12.2022.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-    
-    var gameController: GameViewController?
-    var resultController: ResultsViewController?
+class MainRootView: UIView {
     
     let logo : UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "MilllionaireLogo"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
+    }()
+    
+    let settingsButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "gear"), for: .normal)
+        btn.tintColor = .white
+        btn.contentHorizontalAlignment = .fill
+        btn.contentVerticalAlignment = .fill
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     let startButton: UIButton = {
@@ -29,17 +36,9 @@ class MainViewController: UIViewController {
         btn.layer.borderColor = UIColor.yellow.cgColor
         btn.layer.borderWidth = 2.0
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return btn
     }()
-    
-    @objc func buttonAction(sender: UIButton!) {
-    
-        self.present(gameController!, animated: true)
-      
-    }
-    
-    
+        
     let resultButton: UIButton = {
         let btn = UIButton()
         btn.layer.backgroundColor = #colorLiteral(red: 0.2763207555, green: 0.1030554697, blue: 0.3165085614, alpha: 1)
@@ -50,29 +49,22 @@ class MainViewController: UIViewController {
         btn.layer.borderColor = UIColor.yellow.cgColor
         btn.layer.borderWidth = 2.0
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(resulButtonAction), for: .touchUpInside)
         return btn
     }()
     
-    @objc func resulButtonAction(sender: UIButton!) {
+    init() {
+        super.init(frame: CGRect())
         
-        let resultNavigationController = UINavigationController(rootViewController: resultController!)
-        resultNavigationController.modalPresentationStyle = .fullScreen
-        present(resultNavigationController, animated: true)
-      
+        creatView()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
-        setupLayout()
+    private func creatView() {
         setupButtons()
-        gameController = GameViewController()
-        gameController!.modalPresentationStyle = .fullScreen
-        
-        resultController = ResultsViewController()
-        gameController!.gameDelegate = resultController
+        setupLayout()
     }
     
     private func setupButtons() {
@@ -84,12 +76,12 @@ class MainViewController: UIViewController {
         controlsStackView.setCustomSpacing(20, after: resultButton)
         controlsStackView.axis = .vertical
         
-        view.addSubview(controlsStackView)
+        addSubview(controlsStackView)
         
         NSLayoutConstraint.activate([
-            controlsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            controlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            controlsStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7) ,
+            controlsStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            controlsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7) ,
             controlsStackView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
@@ -97,22 +89,27 @@ class MainViewController: UIViewController {
     private func setupLayout() {
         
         let topImageContainerView = UIView()
-        view.addSubview(topImageContainerView)
+        addSubview(topImageContainerView)
         topImageContainerView.addSubview(logo)
+        topImageContainerView.addSubview(settingsButton)
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            topImageContainerView.topAnchor.constraint(equalTo: view.topAnchor),
-            topImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
+            topImageContainerView.topAnchor.constraint(equalTo: self.topAnchor),
+            topImageContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            topImageContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            topImageContainerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5),
             
             logo.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
             logo.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
             logo.widthAnchor.constraint(equalTo: topImageContainerView.widthAnchor, multiplier: 0.5),
-            logo.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5)
-        ])
+            logo.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5),
+            
+            settingsButton.topAnchor.constraint(equalTo: topImageContainerView.topAnchor, constant: 50),
+            settingsButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            settingsButton.widthAnchor.constraint(equalToConstant: 40),
+            settingsButton.heightAnchor.constraint(equalToConstant: 40)
+            ])
     }
 }
-

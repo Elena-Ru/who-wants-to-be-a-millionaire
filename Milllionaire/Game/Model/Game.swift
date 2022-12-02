@@ -13,10 +13,10 @@ class Game {
     
     var session: GameSession?
     
+    var selectedDifficulty: Difficulty = .easy
+    
     func corAnswerProcent (correctAnswerCount: Int, totalQuestionCount: Int) -> Double {
-        
         return Double(correctAnswerCount * 100 / totalQuestionCount)
-        
     }
     
    var results : [Results] {
