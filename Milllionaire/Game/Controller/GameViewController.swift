@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     var gameDelegate: GameViewControllerDelegate?
     var rootView = GameRootView()
     var questionsWithStrategy : [Question]!
+    var data = QuestionData.shared
    
     private var shuffleStrategy: ShuffleStrategy {
         switch self.difficulty {
@@ -45,7 +46,7 @@ class GameViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        questionsWithStrategy = self.shuffleStrategy.shuffleQuestions(questions: QuestionData().data)
+        questionsWithStrategy = self.shuffleStrategy.shuffleQuestions(questions: data.dataAll)
         currentResults.session = GameSession(correctAnswer: corAnswer, questionQuantity: questionsWithStrategy.count )
         configureUI(question: questionsWithStrategy.first!)
         rootView.tableView.reloadData()

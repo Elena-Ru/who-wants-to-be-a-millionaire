@@ -26,28 +26,22 @@ class MainRootView: UIView {
         return btn
     }()
     
-    let startButton: UIButton = {
-        let btn = UIButton()
-        btn.layer.backgroundColor = #colorLiteral(red: 0.2763207555, green: 0.1030554697, blue: 0.3165085614, alpha: 1)
-        btn.setTitle("Start", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        btn.layer.cornerRadius = 20
-        btn.layer.borderColor = UIColor.yellow.cgColor
-        btn.layer.borderWidth = 2.0
-        btn.translatesAutoresizingMaskIntoConstraints = false
+    let startButton: PurpleButton = {
+        let btn = PurpleButton(title: "Start")
         return btn
     }()
         
-    let resultButton: UIButton = {
+    let resultButton: PurpleButton = {
+        let btn = PurpleButton(title: "Results")
+        return btn
+    }()
+    
+    let addQuestionButton: UIButton = {
         let btn = UIButton()
-        btn.layer.backgroundColor = #colorLiteral(red: 0.2763207555, green: 0.1030554697, blue: 0.3165085614, alpha: 1)
-        btn.setTitle("Results", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        btn.layer.cornerRadius = 20
-        btn.layer.borderColor = UIColor.yellow.cgColor
-        btn.layer.borderWidth = 2.0
+        btn.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+        btn.tintColor = .white
+        btn.contentHorizontalAlignment = .fill
+        btn.contentVerticalAlignment = .fill
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -92,6 +86,7 @@ class MainRootView: UIView {
         addSubview(topImageContainerView)
         topImageContainerView.addSubview(logo)
         topImageContainerView.addSubview(settingsButton)
+        topImageContainerView.addSubview(addQuestionButton)
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -109,7 +104,13 @@ class MainRootView: UIView {
             settingsButton.topAnchor.constraint(equalTo: topImageContainerView.topAnchor, constant: 50),
             settingsButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             settingsButton.widthAnchor.constraint(equalToConstant: 40),
-            settingsButton.heightAnchor.constraint(equalToConstant: 40)
+            settingsButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            addQuestionButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 25),
+            addQuestionButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            addQuestionButton.widthAnchor.constraint(equalToConstant: 40),
+            addQuestionButton.heightAnchor.constraint(equalToConstant: 40)
+            
             ])
     }
 }

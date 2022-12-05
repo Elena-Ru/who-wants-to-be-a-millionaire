@@ -15,10 +15,9 @@ class SettingsViewController: UIViewController {
     @objc private func shuffleAction(_ sender:UISwitch!) {
         if (sender.isOn == true){
             game.selectedDifficulty = .medium
-               }
-               else{
-                   game.selectedDifficulty = .easy
-               }
+        } else {
+            game.selectedDifficulty = .easy
+        }
     }
     
     override func loadView() {
@@ -33,10 +32,8 @@ class SettingsViewController: UIViewController {
         title = "Settings"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(dismissSelf))
-        
-        rootView.shuffleSwitch.addTarget(self, action: #selector(shuffleAction), for: .valueChanged    )
+        rootView.shuffleSwitch.addTarget(self, action: #selector(shuffleAction), for: .valueChanged)
     }
     
     @objc private func dismissSelf() {

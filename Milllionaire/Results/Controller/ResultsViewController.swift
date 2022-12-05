@@ -27,7 +27,6 @@ class ResultsViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
-       
     }
     
     @objc private func dismissSelf() {
@@ -38,12 +37,10 @@ class ResultsViewController: UIViewController {
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         results.count
     }
     
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell()}
         
@@ -54,7 +51,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ResultsViewController: GameViewControllerDelegate {
     func didEndGame(withResult result: Results) {
-        Game.shared.results.append(result)
         results.append(result)
         rootView.tableView.reloadData()
     }
