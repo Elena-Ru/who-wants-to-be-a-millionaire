@@ -10,9 +10,7 @@ import UIKit
 import CoreData
 
 class GameCaretaker {
-    private let decoder = JSONDecoder()
-    private let encoder = JSONEncoder()
-    private let key = "game"
+    
     var resultCD : [Result]?
     var results : [Results]?
     
@@ -26,7 +24,6 @@ class GameCaretaker {
             result.procent = $0.procent!
             result.correctAnswerCount = Int16($0.correctAnswerCount!)
         }
-        
         do {
              try  context.save()
         } catch {
@@ -45,7 +42,6 @@ class GameCaretaker {
             try context.save()
             } catch {
                     print ("There was an error")
-                
             }
     }
     

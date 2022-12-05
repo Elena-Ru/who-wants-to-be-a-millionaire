@@ -15,37 +15,36 @@ class MainViewController: UIViewController {
      var rootView = MainRootView()
     
     override func loadView() {
-        
         super.loadView()
         view = rootView
     }
     
     @objc func settingsButtonAction(sender: UIButton!) {
-        
           let vc = SettingsViewController()
           let settingsNavigationController = UINavigationController(rootViewController: vc)
           settingsNavigationController.modalPresentationStyle = .fullScreen
           present(settingsNavigationController, animated: true)
-  
+      }
+    
+    @objc func addNewQuestion(sender: UIButton!) {
+          let vc = AddingQuestionViewController()
+          let addingQuestionNavigationController = UINavigationController(rootViewController: vc)
+        addingQuestionNavigationController.modalPresentationStyle = .fullScreen
+          present(addingQuestionNavigationController, animated: true)
       }
 
     @objc func buttonAction(sender: UIButton!) {
-
         gameController?.difficulty = Game.shared.selectedDifficulty 
         self.present(gameController!, animated: true)
-
     }
 
     @objc func resulButtonAction(sender: UIButton!) {
-
         let resultNavigationController = UINavigationController(rootViewController: resultController!)
         resultNavigationController.modalPresentationStyle = .fullScreen
         present(resultNavigationController, animated: true)
-
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
         gameController = GameViewController()
@@ -56,6 +55,7 @@ class MainViewController: UIViewController {
         rootView.settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
         rootView.startButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         rootView.resultButton.addTarget(self, action: #selector(resulButtonAction), for: .touchUpInside)
+        rootView.addQuestionButton.addTarget(self, action: #selector(addNewQuestion), for: .touchUpInside)
     }
 }
 

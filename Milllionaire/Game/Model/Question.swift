@@ -8,11 +8,11 @@
 import Foundation
 
 struct Question {
-    let text: String
-    let answers: [Answer]
+    var text: String
+    var answers: [Answer]
 }
 
 struct Answer {
-    let text: String
-    let isCorrect: Bool
+    var text: String
+    var isCorrect: Bool
 }

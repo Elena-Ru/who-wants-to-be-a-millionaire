@@ -19,15 +19,10 @@ class SettingsRootView : UIView {
         return label
     }()
     
-    var shuffleSwitch : UISwitch = {
-        let switchV = UISwitch(frame: CGRect.zero)
-        switchV.translatesAutoresizingMaskIntoConstraints = false
-        setPosition(switchV)
-        switchV.tintColor = .red
-        switchV.onTintColor = .green
-        switchV.layer.cornerRadius = switchV.frame.height / 2.0
-        switchV.backgroundColor = .red
-        switchV.clipsToBounds = true
+    
+    var shuffleSwitch: CustomSwitch = {
+        var isOn = setPosition()
+        let switchV = CustomSwitch(isOn: isOn)
         return switchV
     }()
     
@@ -70,10 +65,10 @@ class SettingsRootView : UIView {
     }
 }
 
-fileprivate  func setPosition(_ switchV: UISwitch) {
+fileprivate  func setPosition() -> Bool {
     if Game.shared.selectedDifficulty == .easy {
-        switchV.setOn(false, animated: true)
+        return false
     } else {
-        switchV.setOn(true, animated: true)
+        return true
     }
 }
