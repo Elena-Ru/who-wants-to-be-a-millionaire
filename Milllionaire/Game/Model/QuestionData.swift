@@ -9,10 +9,14 @@ import Foundation
 
 class QuestionData {
     
+    static let shared = QuestionData()
+    
+    private let questionCaretaker = QuestionDataCaretracker()
+    
     var data: [Question] = [
-        Question(text: "What sort of animal is Walt Disney's Dumbo?", answers: [Answer(text: "Deer", isCorrect: true),
+        Question(text: "What sort of animal is Walt Disney's Dumbo?", answers: [Answer(text: "Deer", isCorrect: false),
                                                                                 Answer(text: "Rabbit", isCorrect: false),
-                                                                                Answer(text: "Elephant", isCorrect: false),
+                                                                                Answer(text: "Elephant", isCorrect: true),
                                                                                 Answer(text: "Donkey", isCorrect: false)
                                                                                ]
                 ),
@@ -41,4 +45,19 @@ class QuestionData {
                                                                                ]
                 )
     ]
+    
+    var dataUser: [Question] {
+        didSet {
+            questionCaretaker.saveQuestions(self.dataUser)
+        }
+    }
+    
+    var dataAll: [Question]{
+         self.data + self.dataUser
+    }
+    
+    private init() {
+        self.dataUser = self.questionCaretaker.loadQuestions()
+    }
+    
 }
