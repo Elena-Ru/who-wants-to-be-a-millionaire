@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B459F1062A18A227000231EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B459F1082A18A227000231EC /* Localizable.strings */; };
 		B459F10C2A18A284000231EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B459F10E2A18A284000231EC /* InfoPlist.strings */; };
+		B459F1132A18A5BC000231EC /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F1122A18A5BC000231EC /* LocalizationKeys.swift */; };
+		B459F1142A18A77E000231EC /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B459F1162A18A77E000231EC /* Localizable.stringsdict */; };
 		B4B303C12931F70C0053B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C02931F70C0053B91A /* AppDelegate.swift */; };
 		B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C22931F70C0053B91A /* SceneDelegate.swift */; };
 		B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C42931F70C0053B91A /* MainViewController.swift */; };
@@ -55,6 +57,9 @@
 		B459F1092A18A235000231EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B459F10D2A18A284000231EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B459F10F2A18A288000231EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B459F1122A18A5BC000231EC /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
+		B459F1152A18A77E000231EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B459F1172A18A780000231EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B4B303BD2931F70C0053B91A /* Milllionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milllionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B303C02931F70C0053B91A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B303C22931F70C0053B91A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +116,10 @@
 		B459F1032A18A203000231EC /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				B459F1122A18A5BC000231EC /* LocalizationKeys.swift */,
 				B459F1082A18A227000231EC /* Localizable.strings */,
 				B459F10E2A18A284000231EC /* InfoPlist.strings */,
+				B459F1162A18A77E000231EC /* Localizable.stringsdict */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -394,6 +401,7 @@
 				B4B303D02931F70E0053B91A /* LaunchScreen.storyboard in Resources */,
 				B459F10C2A18A284000231EC /* InfoPlist.strings in Resources */,
 				B459F1062A18A227000231EC /* Localizable.strings in Resources */,
+				B459F1142A18A77E000231EC /* Localizable.stringsdict in Resources */,
 				B4B303CD2931F70E0053B91A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +420,7 @@
 				B4B303F22933974E0053B91A /* Result+CoreDataClass.swift in Sources */,
 				B4EB408B293B18C100520181 /* PurpleButton.swift in Sources */,
 				B4EB4097293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift in Sources */,
+				B459F1132A18A5BC000231EC /* LocalizationKeys.swift in Sources */,
 				B4EB40692938995100520181 /* SettingsRootView.swift in Sources */,
 				B4EB407F293A229600520181 /* AddingQuestionViewController.swift in Sources */,
 				B4B303E92932C7970053B91A /* Game.swift in Sources */,
@@ -463,6 +472,15 @@
 				B459F10F2A18A288000231EC /* ru */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B459F1162A18A77E000231EC /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B459F1152A18A77E000231EC /* en */,
+				B459F1172A18A780000231EC /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		B4B303CE2931F70E0053B91A /* LaunchScreen.storyboard */ = {

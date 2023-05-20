@@ -43,8 +43,10 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell()}
-        
-        cell.textLabel?.text = " Success % - \(results[indexPath.row].procent!), Qty of correct answers -\(results[indexPath.row].correctAnswerCount! )"
+      let count = results[indexPath.row].correctAnswerCount!
+      let countString = String.localizedStringWithFormat(Texts.Results.format, count)
+      cell.textLabel?.text = " Success % - \(results[indexPath.row].procent!), \(Texts.Results.correctAnswersQty) \(countString)"
+//      cell.textLabel?.text = " Success % - \(results[indexPath.row].procent!), \(Texts.Results.correctAnswersQty) -\(results[indexPath.row].correctAnswerCount! )"
         return cell
     }
 }
