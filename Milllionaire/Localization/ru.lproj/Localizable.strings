@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Milllionaire
+
+  Created by Елена Русских on 20.05.2023.
+  
+*/
+"QtyCorrectAnswers" = "Ответили правильно на";
+"Start" = "Начать игру";
+"Results" = "Результаты";
