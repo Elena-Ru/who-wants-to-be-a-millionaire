@@ -60,6 +60,10 @@
 		B459F1122A18A5BC000231EC /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		B459F1152A18A77E000231EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B459F1172A18A780000231EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B459F1182A18B48F000231EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B459F1192A18B48F000231EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B459F11A2A18B490000231EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B459F11B2A18B490000231EC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ar; path = ar.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B4B303BD2931F70C0053B91A /* Milllionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milllionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B303C02931F70C0053B91A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B303C22931F70C0053B91A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				en,
 				Base,
 				ru,
+				ar,
 			);
 			mainGroup = B4B303B42931F70C0053B91A;
 			productRefGroup = B4B303BE2931F70C0053B91A /* Products */;
@@ -461,6 +466,7 @@
 			children = (
 				B459F1072A18A227000231EC /* ru */,
 				B459F1092A18A235000231EC /* en */,
+				B459F1192A18B48F000231EC /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 			children = (
 				B459F10D2A18A284000231EC /* en */,
 				B459F10F2A18A288000231EC /* ru */,
+				B459F11A2A18B490000231EC /* ar */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -479,6 +486,7 @@
 			children = (
 				B459F1152A18A77E000231EC /* en */,
 				B459F1172A18A780000231EC /* ru */,
+				B459F11B2A18B490000231EC /* ar */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -488,6 +496,7 @@
 			children = (
 				B4B303CF2931F70E0053B91A /* Base */,
 				B459F1022A18A023000231EC /* ru */,
+				B459F1182A18B48F000231EC /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Milllionaire
+
+  Created by Елена Русских on 20.05.2023.
+  
+*/
+"QtyCorrectAnswers" = "لقد أجبت عن";
+"Start" = "ابدأ";
+"Results" = "نتائج";
