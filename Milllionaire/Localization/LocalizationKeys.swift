@@ -12,4 +12,8 @@ enum Texts {
     static var correctAnswersQty: String { NSLocalizedString("QtyCorrectAnswers", comment: "") }
     static var format: String { NSLocalizedString("QtnQty", comment: "Qty of correct anwers") }
   }
+  enum MainVC {
+    static var start: String { NSLocalizedString("Start", comment: "Start Game") }
+    static var results: String { NSLocalizedString("Results", comment: "Game results") }
+  }
 }

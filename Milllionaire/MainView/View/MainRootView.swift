@@ -27,12 +27,12 @@ class MainRootView: UIView {
     }()
     
     let startButton: PurpleButton = {
-        let btn = PurpleButton(title: "Start")
+      let btn = PurpleButton(title: Texts.MainVC.start)
         return btn
     }()
         
     let resultButton: PurpleButton = {
-        let btn = PurpleButton(title: "Results")
+      let btn = PurpleButton(title: Texts.MainVC.results)
         return btn
     }()
     
