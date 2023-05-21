@@ -7,110 +7,150 @@
 
 import UIKit
 
-class MainRootView: UIView {
+final class MainRootView: UIView, SizeClassesCompitable {
+  
+  //MARK: Variables
+  private let logo : UIImageView = {
+    let imageView = UIImageView(image: UIImage(named: "MilllionaireLogo"))
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.contentMode = .scaleAspectFit
+    return imageView
+  }()
+  
+  private let topImageContainerView : UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
+  private var controlsStackView = UIStackView()
+  var compactConstraints: [NSLayoutConstraint] = []
+  var regularConstraints: [NSLayoutConstraint] = []
+  var sharedConstraints: [NSLayoutConstraint] = []
+  var ipadConstraints: [NSLayoutConstraint] = []
+  
+  let settingsButton: WhiteSymbolButton = {
+    let btn = WhiteSymbolButton(img: "gear")
+    return btn
+  }()
+  
+  lazy var startButton: PurpleButton = {
+    let btn = PurpleButton(title: Texts.MainVC.start)
+    return btn
+  }()
+  
+  lazy var resultButton: PurpleButton = {
+    let btn = PurpleButton(title: Texts.MainVC.results)
+    return btn
+  }()
+  
+  let addQuestionButton: WhiteSymbolButton = {
+    let btn = WhiteSymbolButton(img: "plus.circle")
+    return btn
+  }()
+  
+  //MARK: Inits
+  init() {
+    super.init(frame: CGRect())
+    setupUI()
+    setupButtons()
+    setupConstraints()
+    NSLayoutConstraint.activate(sharedConstraints)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  //MARK: Private Methods
+  private func setupButtons() {
+    controlsStackView = UIStackView(arrangedSubviews: [startButton, resultButton])
+    controlsStackView.translatesAutoresizingMaskIntoConstraints = false
+    controlsStackView.distribution = .fillEqually
+    controlsStackView.setCustomSpacing(Constants.spaceBtwVStack, after: startButton)
+    controlsStackView.setCustomSpacing(Constants.spaceBtwVStack, after: resultButton)
+    controlsStackView.axis = .vertical
     
-    let logo : UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "MilllionaireLogo"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    let settingsButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "gear"), for: .normal)
-        btn.tintColor = .white
-        btn.contentHorizontalAlignment = .fill
-        btn.contentVerticalAlignment = .fill
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    let startButton: PurpleButton = {
-      let btn = PurpleButton(title: Texts.MainVC.start)
-        return btn
-    }()
-        
-    let resultButton: PurpleButton = {
-      let btn = PurpleButton(title: Texts.MainVC.results)
-        return btn
-    }()
-    
-    let addQuestionButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "plus.circle"), for: .normal)
-        btn.tintColor = .white
-        btn.contentHorizontalAlignment = .fill
-        btn.contentVerticalAlignment = .fill
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    init() {
-        super.init(frame: CGRect())
-        
-        creatView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func creatView() {
-        setupButtons()
-        setupLayout()
-    }
-    
-    private func setupButtons() {
-        
-        let controlsStackView = UIStackView(arrangedSubviews: [startButton, resultButton])
-        controlsStackView.translatesAutoresizingMaskIntoConstraints = false
-        controlsStackView.distribution = .fillEqually
-        controlsStackView.setCustomSpacing(20, after: startButton)
-        controlsStackView.setCustomSpacing(20, after: resultButton)
-        controlsStackView.axis = .vertical
-        
-        addSubview(controlsStackView)
-        
-        NSLayoutConstraint.activate([
-            controlsStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            controlsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7) ,
-            controlsStackView.heightAnchor.constraint(equalToConstant: 100)
-        ])
-    }
-    
-    private func setupLayout() {
-        
-        let topImageContainerView = UIView()
-        addSubview(topImageContainerView)
-        topImageContainerView.addSubview(logo)
-        topImageContainerView.addSubview(settingsButton)
-        topImageContainerView.addSubview(addQuestionButton)
-        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            
-            topImageContainerView.topAnchor.constraint(equalTo: self.topAnchor),
-            topImageContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            topImageContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            topImageContainerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5),
-            
-            logo.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
-            logo.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
-            logo.widthAnchor.constraint(equalTo: topImageContainerView.widthAnchor, multiplier: 0.5),
-            logo.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5),
-            
-            settingsButton.topAnchor.constraint(equalTo: topImageContainerView.topAnchor, constant: 50),
-            settingsButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            settingsButton.widthAnchor.constraint(equalToConstant: 40),
-            settingsButton.heightAnchor.constraint(equalToConstant: 40),
-            
-            addQuestionButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 25),
-            addQuestionButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            addQuestionButton.widthAnchor.constraint(equalToConstant: 40),
-            addQuestionButton.heightAnchor.constraint(equalToConstant: 40)
-            
-            ])
-    }
+    addSubview(controlsStackView)
+  }
+  
+  private func setupUI() {
+    addSubview(topImageContainerView)
+    topImageContainerView.addSubview(logo)
+    topImageContainerView.addSubview(settingsButton)
+    topImageContainerView.addSubview(addQuestionButton)
+  }
+  
+  private func setupConstraints() {
+    setupSharedConstraints()
+    setupIPadCostaints()
+    setupRegularCostaints()
+    setupCompactCostaints()
+  }
+  
+  private func setupSharedConstraints() {
+    sharedConstraints.append(contentsOf: [
+      topImageContainerView.topAnchor.constraint(equalTo: self.topAnchor),
+      topImageContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+      topImageContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+      topImageContainerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: Constants.mediumMultiplyer),
+      
+      logo.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
+      logo.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
+      logo.widthAnchor.constraint(equalTo: topImageContainerView.widthAnchor, multiplier: Constants.mediumMultiplyer),
+      logo.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: Constants.mediumMultiplyer),
+      
+      settingsButton.topAnchor.constraint(equalTo: topImageContainerView.topAnchor, constant: Constants.topLogoSpace),
+      settingsButton.widthAnchor.constraint(equalToConstant: Constants.symbolBtnSize),
+      settingsButton.heightAnchor.constraint(equalToConstant: Constants.symbolBtnSize),
+      
+      addQuestionButton.widthAnchor.constraint(equalToConstant: Constants.symbolBtnSize),
+      addQuestionButton.heightAnchor.constraint(equalToConstant: Constants.symbolBtnSize),
+      
+      controlsStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+    ])
+  }
+  
+  private func setLowPriorityConstraint() -> NSLayoutConstraint {
+    let lowConst = controlsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: Constants.ctrlStackBottom)
+    lowConst.priority = .defaultLow
+    return lowConst
+  }
+  
+  private func setLowPriorityWidthConstraint() -> NSLayoutConstraint {
+    let lowConstW = controlsStackView.heightAnchor.constraint(equalToConstant: Constants.smallButtonHeight)
+    lowConstW.priority = .defaultLow
+    return lowConstW
+  }
+  
+  private func setupIPadCostaints() {
+    ipadConstraints.append(contentsOf: [
+      controlsStackView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor, constant: Constants.bigButtonHeight),
+      controlsStackView.heightAnchor.constraint(equalToConstant: Constants.bigButtonHeight)
+    ])
+  }
+  
+  private func setupRegularCostaints() {
+    regularConstraints.append(contentsOf: [
+      settingsButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Constants.symbolButtonHorizontalFarInsets),
+      addQuestionButton.topAnchor.constraint(equalTo: settingsButton.topAnchor),
+      addQuestionButton.leadingAnchor.constraint(equalTo: settingsButton.trailingAnchor, constant: Constants.symbolButtonVerticalInsets),
+      
+      controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: Constants.mediumMultiplyer),
+      setLowPriorityConstraint(),
+      setLowPriorityWidthConstraint()
+    ])
+  }
+  
+  private func setupCompactCostaints() {
+    compactConstraints.append(contentsOf: [
+      settingsButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Constants.symbolButtonHorizontalInsets),
+      addQuestionButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: Constants.symbolButtonVerticalInsets),
+      addQuestionButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Constants.symbolButtonHorizontalInsets),
+      
+      controlsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: Constants.ctrlStackBottom),
+      controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: Constants.highMultiplyer),
+      controlsStackView.heightAnchor.constraint(equalToConstant: Constants.smallButtonHeight)
+    ])
+  }
 }
