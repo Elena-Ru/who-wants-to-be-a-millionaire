@@ -8,26 +8,23 @@
 import Foundation
 
 class Game {
-    
-    private let resultsCaretaker = GameCaretaker()
-    
-    var session: GameSession?
-    
-    var selectedDifficulty: Difficulty = .easy
-    
-    func corAnswerProcent (correctAnswerCount: Int, totalQuestionCount: Int) -> Double {
-        return Double(correctAnswerCount * 100 / totalQuestionCount)
+  
+  private let resultsCaretaker = GameCaretaker()
+  var session: GameSession?
+  var selectedDifficulty: Difficulty = .easy
+  static let shared = Game()
+  
+  var results : [Results] {
+    didSet {
+      resultsCaretaker.saveGame(self.results)
     }
-    
-   var results : [Results] {
-        didSet {
-            resultsCaretaker.saveGame(self.results)
-        }
-    }
-    
-    static let shared = Game()
-    
-    private init(){
-        self.results = self.resultsCaretaker.loadGame()
-    }
+  }
+  
+  private init(){
+    self.results = self.resultsCaretaker.loadGame()
+  }
+  
+  func corAnswerProcent (correctAnswerCount: Int, totalQuestionCount: Int) -> Double {
+    Double(correctAnswerCount * 100 / totalQuestionCount)
+  }
 }
