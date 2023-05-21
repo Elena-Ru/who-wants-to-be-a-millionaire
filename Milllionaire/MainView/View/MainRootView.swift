@@ -52,6 +52,7 @@ final class MainRootView: UIView, SizeClassesCompitable {
   //MARK: Inits
   init() {
     super.init(frame: CGRect())
+    backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
     setupUI()
     setupButtons()
     setupConstraints()

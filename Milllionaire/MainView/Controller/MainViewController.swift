@@ -10,10 +10,8 @@ import UIKit
 final class MainViewController: UIViewController {
   
   //MARK: Variables
-  //переделать на протоколы
   var gameController: GameViewController?
   var resultController: ResultsViewController?
-//  var resultController: ResultsViewController?
   var rootView = MainRootView()
   
   //MARK: ObjC Methods
@@ -32,8 +30,11 @@ final class MainViewController: UIViewController {
   }
   
   @objc func buttonAction(sender: UIButton!) {
-    gameController?.difficulty = Game.shared.selectedDifficulty
-    self.present(gameController!, animated: true)
+    if let vc = gameController {
+      vc.difficulty = Game.shared.selectedDifficulty
+      vc.modalPresentationStyle = .fullScreen
+      self.present(vc, animated: true)
+    }
   }
   
   @objc func resulButtonAction(sender: UIButton!) {
@@ -41,7 +42,7 @@ final class MainViewController: UIViewController {
     resultNavigationController.modalPresentationStyle = .fullScreen
     present(resultNavigationController, animated: true)
   }
-  
+
   //MARK: VC LifeCycle
   override func loadView() {
     super.loadView()
@@ -50,12 +51,9 @@ final class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
     gameController = GameViewController()
-    gameController!.modalPresentationStyle = .fullScreen
     resultController = ResultsViewController()
-    gameController!.gameDelegate = resultController
-    
+    gameController?.gameDelegate = resultController
     rootView.settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
     rootView.startButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     rootView.resultButton.addTarget(self, action: #selector(resulButtonAction), for: .touchUpInside)

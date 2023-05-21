@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class GameViewController: UIViewController {
   var currentResults = Game.shared
   var difficulty: Difficulty = Game.shared.selectedDifficulty
