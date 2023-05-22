@@ -16,4 +16,11 @@ enum Texts {
     static var start: String { NSLocalizedString("Start", comment: "Start Game") }
     static var results: String { NSLocalizedString("Results", comment: "Game results") }
   }
+  enum SettingsVC {
+    static var settings: String { NSLocalizedString("Settings", comment: "Game settings") }
+    static var shuffle: String { NSLocalizedString("Shuffle", comment: "Shuffle questions in game") }
+  }
+  enum Shared {
+    static var dismiss: String { NSLocalizedString("Dismiss", comment: "") }
+  }
 }

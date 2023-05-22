@@ -6,5 +6,14 @@
   
 */
 "QtyCorrectAnswers" = "Ответили правильно на";
+
+//MARK: MainVC
 "Start" = "Начать игру";
 "Results" = "Результаты";
+
+//MARK: SettingsVC
+"Settings" = "Настройки";
+"Shuffle" = "Изменить порядок вопросов в игре?";
+
+//MARK: Shared
+"Dismiss" = "Скрыть";
