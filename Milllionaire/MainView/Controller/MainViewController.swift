@@ -7,12 +7,13 @@
 
 import UIKit
 
+
 final class MainViewController: UIViewController {
   
   //MARK: Variables
-  var gameController: GameViewController?
-  var resultController: ResultsViewController?
-  var rootView = MainRootView()
+  private var gameController: GameViewController?
+  private var resultController: ResultsViewController?
+  private var rootView = MainRootView()
   
   //MARK: ObjC Methods
   @objc func settingsButtonAction(sender: UIButton!) {
