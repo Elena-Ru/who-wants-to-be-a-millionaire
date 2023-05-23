@@ -14,6 +14,21 @@
     },
     {
       "idiom" : "universal",
+      "scale" : "1x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
       "locale" : "en",
       "scale" : "1x"
     },
@@ -27,6 +42,25 @@
       "idiom" : "universal",
       "locale" : "en",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "en",
+      "scale" : "1x",
+      "width-class" : "compact"
+    },
+    {
+      "filename" : "quiz1 1.jpeg",
+      "idiom" : "universal",
+      "locale" : "en",
+      "scale" : "2x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "en",
+      "scale" : "3x",
+      "width-class" : "compact"
     },
     {
       "idiom" : "universal",
@@ -46,6 +80,25 @@
     },
     {
       "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "1x",
+      "width-class" : "compact"
+    },
+    {
+      "filename" : "quiz1.jpeg",
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "2x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "3x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
       "locale" : "ar",
       "scale" : "1x"
     },
@@ -59,6 +112,25 @@
       "idiom" : "universal",
       "locale" : "ar",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ar",
+      "scale" : "1x",
+      "width-class" : "compact"
+    },
+    {
+      "filename" : "quiz1 2.jpeg",
+      "idiom" : "universal",
+      "locale" : "ar",
+      "scale" : "2x",
+      "width-class" : "compact"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ar",
+      "scale" : "3x",
+      "width-class" : "compact"
     }
   ],
   "info" : {

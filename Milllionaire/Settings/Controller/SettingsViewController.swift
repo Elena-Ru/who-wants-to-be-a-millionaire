@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
   
   //MARK: Variables
   private var game = Game.shared
@@ -27,6 +27,7 @@ final class SettingsViewController: UIViewController {
   override func loadView() {
     super.loadView()
     view = rootView
+    
   }
   
   override func viewDidLoad() {
@@ -40,6 +41,13 @@ final class SettingsViewController: UIViewController {
                                                         action: #selector(dismissSelf))
     rootView.shuffleSwitch.addTarget(self, action: #selector(shuffleAction), for: .valueChanged)
   }
+  
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    rootView.setupFont(traitCollection: traitCollection)
+    rootView.layoutTrait(traitCollection: traitCollection)
+  }
 }
+
 
 

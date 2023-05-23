@@ -21,6 +21,8 @@ final class Constants {
   static let symbolButtonVerticalInsets: CGFloat = 25
   static let symbolButtonHorizontalInsets: CGFloat = -30
   static let symbolButtonHorizontalFarInsets: CGFloat = -100
+  static let compactFontSize: CGFloat = 16
+  static let regularFontSize: CGFloat = 22
   
   //MARK: Settings
   static let cornerRadiusSwitch: CGFloat = 15
