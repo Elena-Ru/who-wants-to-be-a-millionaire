@@ -83,8 +83,8 @@ final class MainRootView: UIView, SizeClassesCompitable {
   }
   
   private func setupConstraints() {
-    setupSharedConstraints()
     setupIPadCostaints()
+    setupSharedConstraints()
     setupRegularCostaints()
     setupCompactCostaints()
   }
@@ -153,5 +153,20 @@ final class MainRootView: UIView, SizeClassesCompitable {
       controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: Constants.highMultiplyer),
       controlsStackView.heightAnchor.constraint(equalToConstant: Constants.smallButtonHeight)
     ])
+  }
+  
+  func setupFont(traitCollection: UITraitCollection) {
+    switch traitCollection.horizontalSizeClass {
+    case .compact:
+      startButton.titleLabel?.font = UIFont.systemFont(ofSize: Constants.compactFontSize)
+      resultButton.titleLabel?.font = UIFont.systemFont(ofSize: Constants.compactFontSize)
+    case .regular:
+      startButton.titleLabel?.font = UIFont.systemFont(ofSize: Constants.regularFontSize)
+      resultButton.titleLabel?.font = UIFont.systemFont(ofSize: Constants.regularFontSize)
+    case .unspecified:
+      break
+    @unknown default:
+      fatalError()
+    }
   }
 }

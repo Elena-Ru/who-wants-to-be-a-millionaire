@@ -59,12 +59,13 @@ final class MainViewController: UIViewController {
     rootView.startButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     rootView.resultButton.addTarget(self, action: #selector(resulButtonAction), for: .touchUpInside)
     rootView.addQuestionButton.addTarget(self, action: #selector(addNewQuestion), for: .touchUpInside)
-    
+    rootView.setupFont(traitCollection: traitCollection)
     rootView.layoutTrait(traitCollection: UIScreen.main.traitCollection)
   }
   
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     super.traitCollectionDidChange(previousTraitCollection)
+    rootView.setupFont(traitCollection: traitCollection)
     rootView.layoutTrait(traitCollection: traitCollection)
   }
 }
