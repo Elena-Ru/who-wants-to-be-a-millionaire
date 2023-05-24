@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 protocol SizeClassesCompitable {
   var compactConstraints: [NSLayoutConstraint] {get set}
   var regularConstraints: [NSLayoutConstraint] {get set}

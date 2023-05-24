@@ -15,5 +15,9 @@
 "Settings" = "الإعدادات";
 "Shuffle" = "هل تريد خلط الأسئلة؟";
 
+//MARK: Results
+"Results" = "Results";
+"Success" = "Success";
+
 //MARK: Shared
 "Dismiss" = "رفض";

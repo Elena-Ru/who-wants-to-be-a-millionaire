@@ -7,12 +7,11 @@
 
 import Foundation
 
+
 final class MediumQuestionStrategy: ShuffleStrategy {
-    
-    func shuffleQuestions(questions: [Question]) -> [Question] {
-        let shuffledArray = questions.shuffled()
-        return shuffledArray
-    }
-    
-    
+  
+  func shuffleQuestions(questions: [Question]) -> [Question] {
+    let shuffledArray = questions.shuffled()
+    return shuffledArray
+  }
 }

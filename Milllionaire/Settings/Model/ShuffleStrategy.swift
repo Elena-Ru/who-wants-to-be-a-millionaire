@@ -7,7 +7,7 @@
 
 import Foundation
 
+
 protocol ShuffleStrategy {
-    
-    func shuffleQuestions (questions: [Question]) -> [Question]
+  func shuffleQuestions (questions: [Question]) -> [Question]
 }

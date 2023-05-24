@@ -33,8 +33,8 @@ final class SettingsViewController: UIViewController, UIPopoverPresentationContr
   override func viewDidLoad() {
     super.viewDidLoad()
     title = Texts.SettingsVC.settings
-    let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-    navigationController?.navigationBar.titleTextAttributes = textAttributes
+//    let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//    navigationController?.navigationBar.titleTextAttributes = textAttributes
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.Shared.dismiss,
                                                         style: .plain,
                                                         target: self,

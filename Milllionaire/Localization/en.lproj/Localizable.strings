@@ -12,7 +12,11 @@
 
 //MARK: SettingsVC
 "Settings" = "Settings";
-"Shuffle" = "Перемешать порядок вопросов?";
+"Shuffle" = "Do you want to shufle questions?";
+
+//MARK: Results
+"Results" = "Results";
+"Success" = "Success";
 
 //MARK: Shared
 "Dismiss" = "Dismiss";

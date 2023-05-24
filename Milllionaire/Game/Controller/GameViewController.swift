@@ -7,7 +7,8 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+
+final class GameViewController: UIViewController {
   var currentResults = Game.shared
   var difficulty: Difficulty = Game.shared.selectedDifficulty
   var currentQuestion: Question?

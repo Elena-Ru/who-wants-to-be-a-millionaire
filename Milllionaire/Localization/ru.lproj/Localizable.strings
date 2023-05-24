@@ -15,5 +15,9 @@
 "Settings" = "Настройки";
 "Shuffle" = "Изменить порядок вопросов в игре?";
 
+//MARK: Results
+"Results" = "Результаты";
+"Success" = "Успешно";
+
 //MARK: Shared
 "Dismiss" = "Скрыть";

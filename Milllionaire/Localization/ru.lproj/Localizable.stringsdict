@@ -16,8 +16,10 @@
 			<string>%d вопросов</string>
 			<key>one</key>
 			<string>%d вопрос</string>
-			<key>other</key>
+			<key>few</key>
 			<string>%d вопроса</string>
+			<key>other</key>
+			<string>%d вопросов</string>
 		</dict>
 	</dict>
 </dict>

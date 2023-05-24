@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 final class EasyQuestionStrategy: ShuffleStrategy {
     
     func shuffleQuestions(questions: [Question]) -> [Question] {
