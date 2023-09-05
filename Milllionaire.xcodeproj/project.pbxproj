@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		068F492C712C4A4111B0D4C7 /* Pods_Milllionaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */; };
 		B4B303C12931F70C0053B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C02931F70C0053B91A /* AppDelegate.swift */; };
 		B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C22931F70C0053B91A /* SceneDelegate.swift */; };
 		B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C42931F70C0053B91A /* MainViewController.swift */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.release.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.release.xcconfig"; sourceTree = "<group>"; };
+		8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milllionaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B303BD2931F70C0053B91A /* Milllionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milllionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B303C02931F70C0053B91A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B303C22931F70C0053B91A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		B4EB4093293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B4EB4094293DAD0E00520181 /* AnswerCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,17 +99,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068F492C712C4A4111B0D4C7 /* Pods_Milllionaire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D3FB5D7B2ED7AC4191EB587 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B4B303B42931F70C0053B91A = {
 			isa = PBXGroup;
 			children = (
 				B4B303BF2931F70C0053B91A /* Milllionaire */,
 				B4B303BE2931F70C0053B91A /* Products */,
+				BE5AF438C9FA54481552BB5A /* Pods */,
+				7D3FB5D7B2ED7AC4191EB587 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,6 +330,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BE5AF438C9FA54481552BB5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */,
+				431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,9 +347,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4B303D42931F70E0053B91A /* Build configuration list for PBXNativeTarget "Milllionaire" */;
 			buildPhases = (
+				5E1894F85ABECF419721A717 /* [CP] Check Pods Manifest.lock */,
 				B4B303B92931F70C0053B91A /* Sources */,
 				B4B303BA2931F70C0053B91A /* Frameworks */,
 				B4B303BB2931F70C0053B91A /* Resources */,
+				979640E6C8025DCB9083F48A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +406,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E1894F85ABECF419721A717 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Milllionaire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979640E6C8025DCB9083F48A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Milllionaire/Pods-Milllionaire-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Milllionaire/Pods-Milllionaire-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Milllionaire/Pods-Milllionaire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4B303B92931F70C0053B91A /* Sources */ = {
@@ -554,6 +623,7 @@
 		};
 		B4B303D52931F70E0053B91A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -582,6 +652,7 @@
 		};
 		B4B303D62931F70E0053B91A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

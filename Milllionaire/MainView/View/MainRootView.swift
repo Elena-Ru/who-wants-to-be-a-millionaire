@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 
-class MainRootView: UIView {
+
+final class MainRootView: UIView {
     
     let logo : UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "MilllionaireLogo"))
@@ -71,13 +73,14 @@ class MainRootView: UIView {
         controlsStackView.axis = .vertical
         
         addSubview(controlsStackView)
+      
+        controlsStackView.snp.makeConstraints { (make) -> Void in
         
-        NSLayoutConstraint.activate([
-            controlsStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            controlsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7) ,
-            controlsStackView.heightAnchor.constraint(equalToConstant: 100)
-        ])
+          make.centerX.equalTo(self.snp.centerX)
+          make.bottom.equalTo(self.snp_bottomMargin).offset(-40)
+          make.width.equalTo(self.snp.width).multipliedBy(0.6)
+          make.height.equalTo(100)
+        }
     }
     
     private func setupLayout() {
@@ -88,29 +91,34 @@ class MainRootView: UIView {
         topImageContainerView.addSubview(settingsButton)
         topImageContainerView.addSubview(addQuestionButton)
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
+      
+        topImageContainerView.snp.makeConstraints { (make) -> Void in
         
-        NSLayoutConstraint.activate([
-            
-            topImageContainerView.topAnchor.constraint(equalTo: self.topAnchor),
-            topImageContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            topImageContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            topImageContainerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5),
-            
-            logo.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
-            logo.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
-            logo.widthAnchor.constraint(equalTo: topImageContainerView.widthAnchor, multiplier: 0.5),
-            logo.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5),
-            
-            settingsButton.topAnchor.constraint(equalTo: topImageContainerView.topAnchor, constant: 50),
-            settingsButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            settingsButton.widthAnchor.constraint(equalToConstant: 40),
-            settingsButton.heightAnchor.constraint(equalToConstant: 40),
-            
-            addQuestionButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 25),
-            addQuestionButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            addQuestionButton.widthAnchor.constraint(equalToConstant: 40),
-            addQuestionButton.heightAnchor.constraint(equalToConstant: 40)
-            
-            ])
+          make.top.equalTo(self.snp_topMargin)
+          make.leading.equalTo(self.snp_leadingMargin)
+          make.trailing.equalTo(self.snp_trailingMargin)
+          make.height.equalTo(self.snp.height).multipliedBy(0.5)
+        }
+        
+        logo.snp.makeConstraints { (make) -> Void in
+        
+          make.center.equalTo(topImageContainerView.snp.center)
+          make.width.equalTo(topImageContainerView.snp.width).multipliedBy(0.5)
+          make.height.equalTo(topImageContainerView.snp.height).multipliedBy(0.5)
+        }
+        
+        settingsButton.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topImageContainerView.snp.top).offset(50)
+          make.trailing.equalTo(self.snp_trailingMargin).offset(-30)
+          make.width.height.equalTo(40)
+        }
+        
+        addQuestionButton.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(settingsButton.snp.bottom).offset(25)
+          make.trailing.equalTo(self.snp_trailingMargin).offset(-30)
+          make.width.height.equalTo(40)
+        }
     }
 }
