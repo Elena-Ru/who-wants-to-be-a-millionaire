@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 
-class MainRootView: UIView {
+
+final class MainRootView: UIView {
     
     let logo : UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "MilllionaireLogo"))
@@ -71,13 +73,14 @@ class MainRootView: UIView {
         controlsStackView.axis = .vertical
         
         addSubview(controlsStackView)
-        
-        NSLayoutConstraint.activate([
-            controlsStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            controlsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            controlsStackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7) ,
-            controlsStackView.heightAnchor.constraint(equalToConstant: 100)
-        ])
+      
+        controlsStackView.snp.makeConstraints { (make) -> Void in
+                 
+                 make.centerX.equalTo(self.snp.centerX)
+                 make.bottom.equalTo(self.snp_bottomMargin).offset(-40)
+                 make.width.equalTo(self.snp.width).multipliedBy(0.6)
+                 make.height.equalTo(100)
+              }
     }
     
     private func setupLayout() {
