@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 
 
-class SettingsRootView : UIView {
+final class SettingsRootView : UIView {
     
     let shuffleLabel: UILabel = {
         let label = UILabel()
@@ -45,23 +46,30 @@ class SettingsRootView : UIView {
         topContainerView.addSubview(shuffleLabel)
         topContainerView.addSubview(shuffleSwitch)
         topContainerView.translatesAutoresizingMaskIntoConstraints = false
+      
+        topContainerView.snp.makeConstraints { (make) -> Void in
         
-        NSLayoutConstraint.activate([
-            topContainerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            topContainerView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            topContainerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            topContainerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1),
-            
-            shuffleLabel.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 25),
-            shuffleLabel.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor, constant: 20),
-            shuffleLabel.widthAnchor.constraint(equalTo: topContainerView.widthAnchor, multiplier: 0.7) ,
-            shuffleLabel.heightAnchor.constraint(equalToConstant: 20),
-            
-            shuffleSwitch.centerYAnchor.constraint(equalTo: shuffleLabel.centerYAnchor),
-            shuffleSwitch.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor, constant: -40),
-            shuffleSwitch.widthAnchor.constraint(equalToConstant: 50),
-            shuffleSwitch.heightAnchor.constraint(equalToConstant: 30)
-            ])
+          make.top.equalTo(self.snp_topMargin)
+          make.leading.equalTo(self.snp.leading)
+          make.trailing.equalTo(self.snp.trailing)
+          make.height.equalTo(self.snp.height).multipliedBy(0.1)
+        }
+        
+        shuffleLabel.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topContainerView.snp.top).offset(25)
+          make.leading.equalTo(topContainerView.snp.leading)  .offset(20)
+          make.width.equalTo(topContainerView.snp.width)  .multipliedBy(0.7)
+          make.height.equalTo(20)
+        }
+      
+        shuffleSwitch.snp.makeConstraints { (make) -> Void in
+        
+          make.centerY.equalTo(shuffleLabel.snp.centerY)
+          make.trailing.equalTo(topContainerView.snp.trailing)  .offset(-40)
+          make.width.equalTo(50)
+          make.height.equalTo(30)
+        }
     }
 }
 
