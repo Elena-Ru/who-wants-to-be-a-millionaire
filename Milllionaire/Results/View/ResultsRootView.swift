@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class ResultsRootView: UIView {
+final class ResultsRootView: UIView {
     
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -29,13 +30,13 @@ class ResultsRootView: UIView {
     
     private func setupLayout() {
         self.addSubview(tableView)
+      
+        tableView.snp.makeConstraints { (make) -> Void in
         
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 12)
-        ])
+          make.top.equalTo(self.snp.topMargin).offset(10)
+          make.leading.equalTo(self.snp.leading)
+          make.trailing.equalTo(self.snp.trailing)
+          make.bottom.equalTo(self.snp.bottomMargin).offset(12)
+        }
     }
-    
 }
