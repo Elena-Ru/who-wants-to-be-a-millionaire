@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class GameRootView: UIView {
+final class GameRootView: UIView {
     
     var questionNumberLabel: UILabel = {
        let label = UILabel()
@@ -79,40 +80,52 @@ class GameRootView: UIView {
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(tableView)
+      
+        topLabelContainerView.snp.makeConstraints { (make) -> Void in
         
-        NSLayoutConstraint.activate([
-            
-            topLabelContainerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-            topLabelContainerView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            topLabelContainerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            topLabelContainerView.heightAnchor.constraint(equalToConstant: 55),
-            
-            questionNumberLabel.topAnchor.constraint(equalTo: topLabelContainerView.topAnchor, constant: 5),
-            questionNumberLabel.heightAnchor.constraint(equalToConstant: 20) ,
-            questionNumberLabel.leadingAnchor.constraint(equalTo: topLabelContainerView.leadingAnchor),
-            questionNumberLabel.trailingAnchor.constraint(equalTo: topLabelContainerView.trailingAnchor),
-            
-            correctAnswerProcentLabel.topAnchor.constraint(equalTo: questionNumberLabel.bottomAnchor, constant: 5),
-            correctAnswerProcentLabel.bottomAnchor.constraint(equalTo: topLabelContainerView.bottomAnchor, constant: -5) ,
-            correctAnswerProcentLabel.leadingAnchor.constraint(equalTo: topLabelContainerView.leadingAnchor),
-            correctAnswerProcentLabel.trailingAnchor.constraint(equalTo: topLabelContainerView.trailingAnchor),
-            
-            topImageContainerView.topAnchor.constraint(equalTo: topLabelContainerView.bottomAnchor, constant: 15),
-            topImageContainerView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            topImageContainerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            topImageContainerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
-            
-            questionLabel.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
-            questionLabel.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
-            questionLabel.leadingAnchor.constraint(equalTo: topImageContainerView.leadingAnchor, constant: 12),
-            questionLabel.trailingAnchor.constraint(equalTo: topImageContainerView.trailingAnchor, constant: -12),
-            
-            tableView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: topImageContainerView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: topImageContainerView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 12)
-            
-        ])
+          make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+          make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
+          make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
+          make.height.equalTo(55)
+        }
+      
+        questionNumberLabel.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topLabelContainerView.snp.top).offset(5)
+          make.leading.equalTo(topLabelContainerView.snp.leading)
+          make.trailing.equalTo(topLabelContainerView.snp.trailing)
+          make.height.equalTo(20)
+        }
+      
+        correctAnswerProcentLabel.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(questionNumberLabel.snp.bottom).offset(5)
+          make.leading.equalTo(topLabelContainerView.snp.leading)
+          make.trailing.equalTo(topLabelContainerView.snp.trailing)
+          make.bottom.equalTo(topLabelContainerView.snp.bottom).offset(-5)
+        }
+      
+        topImageContainerView.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topLabelContainerView.snp.bottom).offset(15)
+          make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
+          make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
+          make.height.equalTo(self.snp.height).multipliedBy(0.3)
+        }
+      
+        questionLabel.snp.makeConstraints { (make) -> Void in
+        
+          make.center.equalTo(topImageContainerView.snp.center)
+          make.leading.equalTo(topImageContainerView.snp.leading).offset(12)
+          make.trailing.equalTo(topImageContainerView.snp.trailing).offset(-12)
+        }
+      
+        tableView.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topImageContainerView.snp.bottom).offset(10)
+          make.leading.equalTo(topImageContainerView.snp.leading)
+          make.trailing.equalTo(topImageContainerView.snp.trailing)
+          make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(12)
+        }
     }
-    
 }
