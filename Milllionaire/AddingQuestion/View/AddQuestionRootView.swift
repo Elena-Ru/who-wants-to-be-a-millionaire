@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class AddQuestionRootView: UIView {
+final class AddQuestionRootView: UIView {
     
     let tableView: UITableView = {
        let tableView = UITableView()
@@ -49,27 +50,37 @@ class AddQuestionRootView: UIView {
         scrollView.addSubview(topContainerView)
         topContainerView.addSubview(tableView)
         scrollView.addSubview(addButton)
-       
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            
-            topContainerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 5),
-            topContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            topContainerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -15),
-            topContainerView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -60),
-            
-            tableView.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor),
-            
-            addButton.topAnchor.constraint(equalTo: topContainerView.bottomAnchor, constant: 20),
-            addButton.centerXAnchor.constraint(equalTo: topContainerView.centerXAnchor),
-            addButton.widthAnchor.constraint(equalTo: topContainerView.widthAnchor, multiplier: 0.5) ,
-            addButton.heightAnchor.constraint(equalToConstant: 35)
-            ])
+      
+        scrollView.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(self.safeAreaLayoutGuide.snp.top)
+          make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
+          make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading)
+          make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing)
+        }
+        
+        topContainerView.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(scrollView.snp.top).offset(5)
+          make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-60)
+          make.leading.equalTo(scrollView.snp.leading).offset(15)
+          make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-15)
+        }
+      
+        tableView.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topContainerView.snp.top).offset(10)
+          make.bottom.equalTo(topContainerView.snp.bottom)
+          make.leading.equalTo(topContainerView.snp.leading)
+          make.trailing.equalTo(topContainerView.snp.trailing)
+        }
+      
+        addButton.snp.makeConstraints { (make) -> Void in
+        
+          make.top.equalTo(topContainerView.snp.bottom).offset(20)
+          make.centerX.equalTo(topContainerView.snp.centerX)
+          make.width.equalTo(topContainerView.snp.width).multipliedBy(0.5)
+          make.height.equalTo(35)
+        }
     }
 }
