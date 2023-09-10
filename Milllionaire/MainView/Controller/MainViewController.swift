@@ -9,53 +9,71 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var gameController: GameViewController?
-    var resultController: ResultsViewController?
+    // MARK: - Properties
     
-     var rootView = MainRootView()
+    lazy var gameController: GameViewController = {
+        let controller = GameViewController()
+        controller.modalPresentationStyle = .fullScreen
+        controller.gameDelegate = resultController
+        return controller
+    }()
+    
+    lazy var resultController: ResultsViewController = {
+        ResultsViewController()
+    }()
+    
+    var rootView = MainRootView()
+    
+    // MARK: - Lifecycle
     
     override func loadView() {
         super.loadView()
         view = rootView
     }
     
-    @objc func settingsButtonAction(sender: UIButton!) {
-          let vc = SettingsViewController()
-          let settingsNavigationController = UINavigationController(rootViewController: vc)
-          settingsNavigationController.modalPresentationStyle = .fullScreen
-          present(settingsNavigationController, animated: true)
-      }
-    
-    @objc func addNewQuestion(sender: UIButton!) {
-          let vc = AddingQuestionViewController()
-          let addingQuestionNavigationController = UINavigationController(rootViewController: vc)
-        addingQuestionNavigationController.modalPresentationStyle = .fullScreen
-          present(addingQuestionNavigationController, animated: true)
-      }
-
-    @objc func buttonAction(sender: UIButton!) {
-        gameController?.difficulty = Game.shared.selectedDifficulty 
-        self.present(gameController!, animated: true)
-    }
-
-    @objc func resulButtonAction(sender: UIButton!) {
-        let resultNavigationController = UINavigationController(rootViewController: resultController!)
-        resultNavigationController.modalPresentationStyle = .fullScreen
-        present(resultNavigationController, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        setupActions()
+    }
+    
+    // MARK: - Setup
+    
+    private func setupView() {
         view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
-        gameController = GameViewController()
-        gameController!.modalPresentationStyle = .fullScreen
-        resultController = ResultsViewController()
-        gameController!.gameDelegate = resultController
-        
+    }
+    
+    private func setupActions() {
         rootView.settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
-        rootView.startButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        rootView.resultButton.addTarget(self, action: #selector(resulButtonAction), for: .touchUpInside)
-        rootView.addQuestionButton.addTarget(self, action: #selector(addNewQuestion), for: .touchUpInside)
+        rootView.startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+        rootView.resultButton.addTarget(self, action: #selector(resultButtonAction), for: .touchUpInside)
+        rootView.addQuestionButton.addTarget(self, action: #selector(addNewQuestionAction), for: .touchUpInside)
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func settingsButtonAction(sender: UIButton!) {
+        presentViewController(with: SettingsViewController())
+    }
+    
+    @objc private func addNewQuestionAction(sender: UIButton!) {
+        presentViewController(with: AddingQuestionViewController())
+    }
+
+    @objc private func startButtonAction(sender: UIButton!) {
+        gameController.difficulty = Game.shared.selectedDifficulty
+        present(gameController, animated: true)
+    }
+
+    @objc private func resultButtonAction(sender: UIButton!) {
+        presentViewController(with: resultController)
+    }
+    
+    // MARK: - Helper
+    
+    private func presentViewController<T: UIViewController>(with controller: T) {
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
 }
-
