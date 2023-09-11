@@ -33,16 +33,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupActions()
     }
     
     // MARK: - Setup
-    
-    private func setupView() {
-        view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
-    }
-    
+  
     private func setupActions() {
         rootView.settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
         rootView.startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
