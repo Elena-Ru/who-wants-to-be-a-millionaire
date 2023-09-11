@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		068F492C712C4A4111B0D4C7 /* Pods_Milllionaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */; };
+		B401D5112AAEEABB00389110 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401D5102AAEEABB00389110 /* UIColor.swift */; };
 		B4B303C12931F70C0053B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C02931F70C0053B91A /* AppDelegate.swift */; };
 		B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C22931F70C0053B91A /* SceneDelegate.swift */; };
 		B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C42931F70C0053B91A /* MainViewController.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.release.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.release.xcconfig"; sourceTree = "<group>"; };
 		8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milllionaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B401D5102AAEEABB00389110 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B4B303BD2931F70C0053B91A /* Milllionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milllionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B303C02931F70C0053B91A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B303C22931F70C0053B91A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B401D50F2AAEEAAC00389110 /* Extnsions */ = {
+			isa = PBXGroup;
+			children = (
+				B401D5102AAEEABB00389110 /* UIColor.swift */,
+			);
+			path = Extnsions;
+			sourceTree = "<group>";
+		};
 		B4B303B42931F70C0053B91A = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 			children = (
 				B4B303C02931F70C0053B91A /* AppDelegate.swift */,
 				B4B303C22931F70C0053B91A /* SceneDelegate.swift */,
+				B401D50F2AAEEAAC00389110 /* Extnsions */,
 				B4EB407D293A224500520181 /* AddingQuestion */,
 				B4EB4065293889D000520181 /* Service */,
 				B4EB40642938888700520181 /* Game */,
@@ -336,7 +347,6 @@
 				BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */,
 				431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -476,6 +486,7 @@
 				B4B303F32933974E0053B91A /* Result+CoreDataProperties.swift in Sources */,
 				B4B303FB2934FB120053B91A /* MediumQuestionStrategy.swift in Sources */,
 				B4B303ED29334A1D0053B91A /* Results.swift in Sources */,
+				B401D5112AAEEABB00389110 /* UIColor.swift in Sources */,
 				B4EB4091293DA51200520181 /* QuestionDataCaretracker.swift in Sources */,
 				B4EB408F293BA8DF00520181 /* AddQuestionRootView.swift in Sources */,
 				B4EB406729388C5500520181 /* MainRootView.swift in Sources */,
