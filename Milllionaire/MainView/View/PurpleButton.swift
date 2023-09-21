@@ -7,23 +7,49 @@
 
 import UIKit
 
-class PurpleButton: UIButton {
+class RoundedButton: UIButton {
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
      init(title: String) {
         super.init(frame: .zero)
-        layer.backgroundColor = #colorLiteral(red: 0.2763207555, green: 0.1030554697, blue: 0.3165085614, alpha: 1)
         setTitle(title, for: .normal)
-        setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         layer.cornerRadius = 20
-        layer.borderColor = UIColor.yellow.cgColor
         layer.borderWidth = 2.0
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class StartButton: RoundedButton {
+  
+    override init(title: String) {
+        super.init(title: title)
+        layer.backgroundColor = UIColor.deepPurple.cgColor
+        setTitleColor(UIColor.shinySilver, for: .normal)
+        layer.borderColor = UIColor.softSilver.cgColor
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class ResultsButton: RoundedButton {
+  
+    override init(title: String) {
+        super.init(title: title)
+        layer.backgroundColor = UIColor.deepPurple.cgColor
+        setTitleColor(UIColor.shinySilver, for: .normal)
+        layer.borderColor = UIColor.softSilver.cgColor
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

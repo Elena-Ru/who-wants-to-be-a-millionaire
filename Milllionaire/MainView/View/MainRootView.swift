@@ -21,27 +21,27 @@ final class MainRootView: UIView {
     let settingsButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "gear"), for: .normal)
-        btn.tintColor = .white
+        btn.tintColor = .deepPurple
         btn.contentHorizontalAlignment = .fill
         btn.contentVerticalAlignment = .fill
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    let startButton: PurpleButton = {
-        let btn = PurpleButton(title: "Start")
+    let startButton: StartButton = {
+        let btn = StartButton(title: "Start")
         return btn
     }()
         
-    let resultButton: PurpleButton = {
-        let btn = PurpleButton(title: "Results")
+    let resultButton: ResultsButton = {
+        let btn = ResultsButton(title: "Results")
         return btn
     }()
     
     let addQuestionButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "plus.circle"), for: .normal)
-        btn.tintColor = .white
+        btn.tintColor = .deepPurple
         btn.contentHorizontalAlignment = .fill
         btn.contentVerticalAlignment = .fill
         btn.translatesAutoresizingMaskIntoConstraints = false
