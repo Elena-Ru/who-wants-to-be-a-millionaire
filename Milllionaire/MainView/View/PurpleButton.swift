@@ -40,17 +40,3 @@ class StartButton: RoundedButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-class ResultsButton: RoundedButton {
-  
-    override init(title: String) {
-        super.init(title: title)
-        layer.backgroundColor = UIColor.deepPurple.cgColor
-        setTitleColor(UIColor.shinySilver, for: .normal)
-        layer.borderColor = UIColor.softSilver.cgColor
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}

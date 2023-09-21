@@ -33,8 +33,8 @@ final class MainRootView: UIView {
         return btn
     }()
         
-    let resultButton: ResultsButton = {
-        let btn = ResultsButton(title: "Results")
+    let resultButton: StartButton = {
+        let btn = StartButton(title: "Results")
         return btn
     }()
     
