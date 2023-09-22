@@ -3,6 +3,9 @@ Simple quiz application.
 
 On the main view of the app you can push "Start" button for a creating a new game session or choose "Results" and inspect last results of the game.
 
+![ezgif com-video-to-gif (5)](https://github.com/Elena-Ru/who-wants-to-be-a-millionaire/assets/10026372/cd9400ba-3e24-41a2-9b1d-cb0d6f561e4e)
+
+
 <img width="292" alt="Снимок экрана 2023-09-22 в 18 06 52" src="https://github.com/Elena-Ru/who-wants-to-be-a-millionaire/assets/10026372/d4abba2b-b33b-4a2c-a97e-ba82ebd10077">
 
 The game view represents by "Question view" and "Answer area" with 4 variants of answer. Only 1 of them is correct. 
