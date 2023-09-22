@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		068F492C712C4A4111B0D4C7 /* Pods_Milllionaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */; };
+		B43331892ABC92110037EC42 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B43331882ABC92110037EC42 /* Localizable.strings */; };
 		B4B303C12931F70C0053B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C02931F70C0053B91A /* AppDelegate.swift */; };
 		B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C22931F70C0053B91A /* SceneDelegate.swift */; };
 		B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303C42931F70C0053B91A /* MainViewController.swift */; };
@@ -46,11 +47,13 @@
 		B4EB4097293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4093293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift */; };
 		B4EB4098293DAD0E00520181 /* AnswerCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4094293DAD0E00520181 /* AnswerCD+CoreDataClass.swift */; };
 		B4EB4099293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */; };
+		B4FB65B52ABD903800FA0B2A /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B42ABD903800FA0B2A /* Texts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.release.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.release.xcconfig"; sourceTree = "<group>"; };
 		8284C7E2680724BFAE0B8F48 /* Pods_Milllionaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milllionaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43331882ABC92110037EC42 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B4B303BD2931F70C0053B91A /* Milllionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milllionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B303C02931F70C0053B91A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B303C22931F70C0053B91A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		B4EB4093293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B4EB4094293DAD0E00520181 /* AnswerCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		B4FB65B42ABD903800FA0B2A /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +141,8 @@
 			children = (
 				B4B303C02931F70C0053B91A /* AppDelegate.swift */,
 				B4B303C22931F70C0053B91A /* SceneDelegate.swift */,
+				B43331882ABC92110037EC42 /* Localizable.strings */,
+				B4FB65B42ABD903800FA0B2A /* Texts.swift */,
 				B4EB407D293A224500520181 /* AddingQuestion */,
 				B4EB4065293889D000520181 /* Service */,
 				B4EB40642938888700520181 /* Game */,
@@ -336,7 +342,6 @@
 				BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */,
 				431E0684036019C749BA1514 /* Pods-Milllionaire.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -401,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4B303D02931F70E0053B91A /* LaunchScreen.storyboard in Resources */,
+				B43331892ABC92110037EC42 /* Localizable.strings in Resources */,
 				B4B303CD2931F70E0053B91A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +481,7 @@
 				B4B303C12931F70C0053B91A /* AppDelegate.swift in Sources */,
 				B4B303F32933974E0053B91A /* Result+CoreDataProperties.swift in Sources */,
 				B4B303FB2934FB120053B91A /* MediumQuestionStrategy.swift in Sources */,
+				B4FB65B52ABD903800FA0B2A /* Texts.swift in Sources */,
 				B4B303ED29334A1D0053B91A /* Results.swift in Sources */,
 				B4EB4091293DA51200520181 /* QuestionDataCaretracker.swift in Sources */,
 				B4EB408F293BA8DF00520181 /* AddQuestionRootView.swift in Sources */,

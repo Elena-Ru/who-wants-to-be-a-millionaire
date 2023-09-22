@@ -21,7 +21,7 @@ final class AddQuestionRootView: UIView {
     let addButton: UIButton = {
         let btn = UIButton()
         btn.layer.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        btn.setTitle("Add", for: .normal)
+        btn.setTitle(Texts.add, for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         btn.layer.cornerRadius = 20

@@ -55,11 +55,11 @@ class GameViewController: UIViewController {
     func configureUI(question: Question){
         currentResults.session?.currentQuestionNumber.addObserver(self, options: [.new, .initial], closure: {
         [weak self] (numberOfQuestion, _) in
-            self?.rootView.questionNumberLabel.text = "Question №\(numberOfQuestion)"
+          self?.rootView.questionNumberLabel.text = String(format: Texts.question, numberOfQuestion)
         })
         currentResults.session?.procent.addObserver(self, options: [.new, .initial], closure: {
         [weak self] (procent, _) in
-            self?.rootView.correctAnswerProcentLabel.text = "Success: \(procent)%"
+            self?.rootView.correctAnswerProcentLabel.text = String(format: Texts.success, procent)
         })
         rootView.questionLabel.text = question.text
         currentQuestion = question
@@ -106,8 +106,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
                     tableView.reloadData()
                 }
                 else {
-                    let alert = UIAlertController(title: "Game over", message: "Congratulations! You are winner!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                  let alert = UIAlertController(title: Texts.gameOver, message: Texts.congratulations, preferredStyle: .alert)
+                      alert.addAction(UIAlertAction(title: Texts.ok, style: .cancel, handler: { action in
                         alert.dismiss(animated: true, completion: nil)
                         self.dismiss(animated: true)
                         }
@@ -121,8 +121,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         } else {
-            let alert = UIAlertController(title: "Wrong", message: "Try again", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+          let alert = UIAlertController(title: Texts.wrong, message: Texts.tryAgain, preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: Texts.ok, style: .cancel, handler: { action in
                 alert.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true)
                 }
