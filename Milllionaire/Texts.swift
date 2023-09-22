@@ -19,6 +19,11 @@ enum Texts {
     static var enterQuestion: String { NSLocalizedString("enter_question", comment: "") }
     static var enterCorrectAnswer: String { NSLocalizedString("enter_correct_answer", comment: "") }
     static var enterIncorrectAnswer: String { NSLocalizedString("enter_incorrect_answer", comment: "") }
-  
-  
+    static var question: String { NSLocalizedString("questionN", comment: "") }
+    static var success: String { NSLocalizedString("success", comment: "") }
+    static var gameOver: String { NSLocalizedString("game_over", comment: "") }
+    static var congratulations: String { NSLocalizedString("congratulations", comment: "") }
+    static var ok: String { NSLocalizedString("ok", comment: "") }
+    static var wrong: String { NSLocalizedString("wrong", comment: "") }
+    static var tryAgain: String { NSLocalizedString("try_again", comment: "") }
 }

@@ -15,4 +15,10 @@
 "enter_question" = "Enter your question.";
 "enter_correct_answer" = "Enter correct answer here";
 "enter_incorrect_answer" = "Enter wrong answer #%d here";
-
+"questionN" = "Question № %d ";
+"success" = "Success: %f";
+"game_over" = "Game over";
+"congratulations" = "Congratulations! You are winner!";
+"ok" = "OK";
+"wrong" = "Wrong";
+"try_again" = "Try again";
