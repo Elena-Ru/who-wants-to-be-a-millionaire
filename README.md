@@ -1,4 +1,4 @@
-# who-wants-to-be-a-millionaire
+# QuizQuake
 Simple quiz application.
 
 On the main view of the app you can push "Start" button for a creating a new game session or choose "Results" and inspect last results of the game.
