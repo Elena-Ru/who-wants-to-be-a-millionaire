@@ -14,18 +14,18 @@ final class AddQuestionRootView: UIView {
        let tableView = UITableView()
        tableView.translatesAutoresizingMaskIntoConstraints = false
        tableView.register(AddQuestionTableViewCell.self, forCellReuseIdentifier: AddQuestionTableViewCell.identifier)
-       tableView.backgroundColor = #colorLiteral(red: 0.1470966935, green: 0.2613164783, blue: 0.4531337619, alpha: 1)
+       tableView.backgroundColor = UIColor(named: "secondaryBackground")
        return tableView
    }()
 
     let addButton: UIButton = {
         let btn = UIButton()
-        btn.layer.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        btn.layer.backgroundColor = UIColor(named: "accent")?.cgColor
         btn.setTitle(Texts.add, for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         btn.layer.cornerRadius = 20
-        btn.layer.borderColor = UIColor.white.cgColor
+        btn.layer.borderColor =  UIColor(named: "darkOrange")?.cgColor
         btn.layer.borderWidth = 2.0
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

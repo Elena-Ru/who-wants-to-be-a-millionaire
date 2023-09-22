@@ -27,7 +27,7 @@ class AddQuestionTableViewCell: UITableViewCell {
             textView.layer.masksToBounds = true
             textView.layer.cornerRadius = 20.0
             textView.layer.borderWidth = 1
-            textView.layer.borderColor = UIColor.yellow.cgColor
+            textView.layer.borderColor = UIColor(named: "accent")?.cgColor
             textView.font = UIFont.systemFont(ofSize: 16.0)
             textView.textColor = UIColor.black
             textView.textAlignment = NSTextAlignment.left
@@ -65,7 +65,7 @@ class AddQuestionTableViewCell: UITableViewCell {
     
      func setupLayout() {
          
-         contentView.backgroundColor = #colorLiteral(red: 0.1470966935, green: 0.2613164783, blue: 0.4531337619, alpha: 1)
+         contentView.backgroundColor = UIColor(named: "secondaryBackground")
          contentView.addSubview(questionLabel)
          contentView.addSubview(questionText)
          contentView.addSubview(correctAnswer)

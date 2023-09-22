@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.1924170554, green: 0.0007362262113, blue: 0.3723829389, alpha: 1)
+        view.backgroundColor = UIColor(named: "background")
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
     }
@@ -81,8 +81,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = currentQuestion?.answers[indexPath.row].text
         cell.textLabel?.textColor = .white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        cell.backgroundColor = #colorLiteral(red: 0.1470966935, green: 0.2613164783, blue: 0.4531337619, alpha: 1)
-        cell.layer.borderColor = UIColor.white.cgColor
+        cell.backgroundColor = UIColor(named: "accent")
+        cell.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
         cell.layer.borderWidth = 2
         return cell
     }
