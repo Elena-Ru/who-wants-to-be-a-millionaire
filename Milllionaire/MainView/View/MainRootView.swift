@@ -11,11 +11,13 @@ import SnapKit
 
 final class MainRootView: UIView {
     
-    let logo : UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "MilllionaireLogo"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    let logo : UILabel = {
+        let label = UILabel()
+        label.text = "QuizQuake"
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 46)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let settingsButton: UIButton = {
@@ -103,8 +105,6 @@ final class MainRootView: UIView {
         logo.snp.makeConstraints { (make) -> Void in
         
           make.center.equalTo(topImageContainerView.snp.center)
-          make.width.equalTo(topImageContainerView.snp.width).multipliedBy(0.5)
-          make.height.equalTo(topImageContainerView.snp.height).multipliedBy(0.5)
         }
         
         settingsButton.snp.makeConstraints { (make) -> Void in

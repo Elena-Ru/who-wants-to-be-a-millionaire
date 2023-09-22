@@ -61,20 +61,19 @@ final class GameRootView: UIView {
     private func setupLayout() {
         
         let topLabelContainerView = UIView()
-        topLabelContainerView.backgroundColor = #colorLiteral(red: 0.1470966935, green: 0.2613164783, blue: 0.4531337619, alpha: 1)
+        topLabelContainerView.backgroundColor = UIColor(named: "accent")
         topLabelContainerView.layer.cornerRadius = 30
         topLabelContainerView.layer.borderWidth = 2
-        topLabelContainerView.layer.borderColor = UIColor.yellow.cgColor
+        topLabelContainerView.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
         topLabelContainerView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(topLabelContainerView)
         topLabelContainerView.addSubview(questionNumberLabel)
         topLabelContainerView.addSubview(correctAnswerProcentLabel)
         
         let topImageContainerView = UIView()
-        topImageContainerView.backgroundColor = #colorLiteral(red: 0.2763207555, green: 0.1030554697, blue: 0.3165085614, alpha: 1)
+        topImageContainerView.backgroundColor = UIColor(named: "secondaryBackground")
         topImageContainerView.layer.cornerRadius = 30
         topImageContainerView.layer.borderWidth = 2
-        topImageContainerView.layer.borderColor = UIColor.yellow.cgColor
         self.addSubview(topImageContainerView)
         topImageContainerView.addSubview(questionLabel)
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
