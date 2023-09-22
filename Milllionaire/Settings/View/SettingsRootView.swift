@@ -13,7 +13,7 @@ final class SettingsRootView : UIView {
     
     let shuffleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Do you what to shuffle questions?"
+        label.text = Texts.shuffle
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false

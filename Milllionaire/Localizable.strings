@@ -8,3 +8,5 @@
 "start" = "Start";
 "results" = "Results";
 "dismiss" = "Dismiss";
+"settings" = "Settings";
+"shuffle_questions" = "Do you what to shuffle questions?";
