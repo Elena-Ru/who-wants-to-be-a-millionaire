@@ -8,10 +8,8 @@
 import Foundation
 
 enum Texts {
-    
-    enum MainContoller {
         
         static var start: String { NSLocalizedString("start", comment: "") }
         static var results: String { NSLocalizedString("results", comment: "") }
-    }
+        static var dismiss: String { NSLocalizedString("dismiss", comment: "") }
 }
