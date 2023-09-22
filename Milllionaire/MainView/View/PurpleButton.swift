@@ -14,7 +14,7 @@ class PurpleButton: UIButton {
     
      init(title: String) {
         super.init(frame: .zero)
-       layer.backgroundColor = UIColor(named: "accent")?.cgColor
+        layer.backgroundColor = UIColor(named: "accent")?.cgColor
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
