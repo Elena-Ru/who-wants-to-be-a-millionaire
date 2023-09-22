@@ -10,3 +10,9 @@
 "dismiss" = "Dismiss";
 "settings" = "Settings";
 "shuffle_questions" = "Do you what to shuffle questions?";
+"add_question" = "Add new question";
+"add" = "Add";
+"enter_question" = "Enter your question.";
+"enter_correct_answer" = "Enter correct answer here";
+"enter_incorrect_answer" = "Enter wrong answer #%d here";
+

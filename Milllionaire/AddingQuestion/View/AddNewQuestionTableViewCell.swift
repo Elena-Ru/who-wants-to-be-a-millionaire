@@ -14,7 +14,7 @@ class AddQuestionTableViewCell: UITableViewCell {
     
         let questionLabel: UILabel = {
             let label = UILabel()
-            label.text = "Enter your question."
+            label.text = Texts.enterQuestion
             label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 18)
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,24 +40,20 @@ class AddQuestionTableViewCell: UITableViewCell {
         }()
     
     var correctAnswer: AnswerTextField = {
-           let textField =  AnswerTextField(title: "Enter correct answer here")
-           return textField
-       }()
+       AnswerTextField(title: Texts.enterCorrectAnswer)
+    }()
     
     var wrongAnswer1: AnswerTextField = {
-           let textField =  AnswerTextField(title: "Enter wrong answer #1 here")
-           return textField
-       }()
+       AnswerTextField(title: String(format: Texts.enterIncorrectAnswer, 1))
+    }()
     
     var wrongAnswer2: AnswerTextField = {
-           let textField =  AnswerTextField(title: "Enter wrong answer #2 here")
-           return textField
-       }()
+       AnswerTextField(title: String(format: Texts.enterIncorrectAnswer, 2))
+    }()
     
     var wrongAnswer3: AnswerTextField = {
-           let textField =  AnswerTextField(title: "Enter wrong answer #3 here")
-           return textField
-       }()
+       AnswerTextField(title: String(format: Texts.enterIncorrectAnswer, 3))
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
