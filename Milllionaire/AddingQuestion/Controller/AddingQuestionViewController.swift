@@ -13,6 +13,7 @@ class AddingQuestionViewController: UIViewController {
     var question : Question?
     var answers = [Answer]()
     var data = QuestionData.shared
+    private var router: AddQuestionRouter!
     
     override func loadView() {
         super.loadView()
@@ -21,7 +22,8 @@ class AddingQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
+        router = AddQuestionRouter(viewController: self)
         view.backgroundColor = UIColor(named: "background")
         title = Texts.addQuestion
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -34,7 +36,7 @@ class AddingQuestionViewController: UIViewController {
     }
     
     @objc private func dismissSelf() {
-        dismiss(animated: true)
+        router.closeAddQuestion()
     }
     
     @objc func addQuestion(sender: UIButton!) {
