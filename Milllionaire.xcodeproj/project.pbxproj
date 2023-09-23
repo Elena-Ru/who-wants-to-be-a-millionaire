@@ -52,6 +52,7 @@
 		B4FB65B92ABECAC000FA0B2A /* SecondarySystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */; };
 		B4FB65BB2ABED47300FA0B2A /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */; };
 		B4FB65BD2ABED66F00FA0B2A /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */; };
+		B4FB65C12ABF0A3800FA0B2A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondarySystemButton.swift; sourceTree = "<group>"; };
 		B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
+		B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		B4EB40612938881C00520181 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B4FB65C22ABF0A5D00FA0B2A /* Router */,
 				B4EB40702939B01D00520181 /* Model */,
 				B4EB40782939B12200520181 /* View */,
 				B4EB40772939B11100520181 /* Controller */,
@@ -364,6 +367,14 @@
 			path = BaseRouter;
 			sourceTree = "<group>";
 		};
+		B4FB65C22ABF0A5D00FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		BE5AF438C9FA54481552BB5A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +502,7 @@
 				B4B303EB2932C85E0053B91A /* GameSession.swift in Sources */,
 				B4B303E3293291250053B91A /* GameViewController.swift in Sources */,
 				B4EB4087293A635100520181 /* AddNewQuestionTableViewCell.swift in Sources */,
+				B4FB65C12ABF0A3800FA0B2A /* SettingsRouter.swift in Sources */,
 				B4B303F92934F6890053B91A /* ShuffleStrategy.swift in Sources */,
 				B4B303F22933974E0053B91A /* Result+CoreDataClass.swift in Sources */,
 				B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */,

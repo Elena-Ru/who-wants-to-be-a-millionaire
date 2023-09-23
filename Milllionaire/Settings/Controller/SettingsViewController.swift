@@ -11,6 +11,7 @@ class SettingsViewController: UIViewController {
     
     var game = Game.shared    
     var rootView = SettingsRootView()
+    private var router: SettingsRouter!
     
     @objc private func shuffleAction(_ sender:UISwitch!) {
         if (sender.isOn == true){
@@ -27,7 +28,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
+        router = SettingsRouter(viewController: self)
         view.backgroundColor = UIColor(named: "background")
         title = Texts.settings
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -37,7 +39,7 @@ class SettingsViewController: UIViewController {
     }
     
     @objc private func dismissSelf() {
-        dismiss(animated: true)
+        router.closeSettings()
     }
     
 }
