@@ -82,7 +82,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell()}
         
         cell.textLabel?.text = currentQuestion?.answers[indexPath.row].text
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = UIColor(named: "title")
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         cell.backgroundColor = UIColor(named: "accent")
         cell.layer.borderColor = UIColor(named: "darkOrange")?.cgColor

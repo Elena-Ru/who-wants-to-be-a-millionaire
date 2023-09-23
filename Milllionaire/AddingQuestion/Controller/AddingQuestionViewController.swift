@@ -26,7 +26,7 @@ class AddingQuestionViewController: UIViewController {
         router = AddQuestionRouter(viewController: self)
         view.backgroundColor = UIColor(named: "background")
         title = Texts.addQuestion
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "title")]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.dismiss, style: .plain, target: self, action: #selector(dismissSelf))
        

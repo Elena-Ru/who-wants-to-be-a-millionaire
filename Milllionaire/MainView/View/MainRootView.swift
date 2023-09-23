@@ -27,7 +27,7 @@ final class MainRootView: UIView {
     let logo : UILabel = {
         let label = UILabel()
         label.text = "QuizQuake"
-        label.textColor = .white
+        label.textColor = UIColor(named: "title")
         label.font = UIFont.systemFont(ofSize: Constants.logoFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

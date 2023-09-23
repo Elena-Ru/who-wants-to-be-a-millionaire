@@ -16,7 +16,7 @@ class SecondarySystemButton: UIButton {
     init(withImage systemName: String) {
       super.init(frame: .zero)
       setImage(UIImage(systemName: systemName), for: .normal)
-      tintColor = .white
+      tintColor = UIColor(named: "systemButton")
       contentHorizontalAlignment = .fill
       contentVerticalAlignment = .fill
       translatesAutoresizingMaskIntoConstraints = false
