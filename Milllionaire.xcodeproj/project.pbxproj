@@ -55,6 +55,7 @@
 		B4FB65C12ABF0A3800FA0B2A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */; };
 		B4FB65C42ABF0C5B00FA0B2A /* ResultsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */; };
 		B4FB65C72ABF0D3300FA0B2A /* AddQuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */; };
+		B4FB65C92ABF0E5000FA0B2A /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRouter.swift; sourceTree = "<group>"; };
 		B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRouter.swift; sourceTree = "<group>"; };
+		B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				B4B303E2293291250053B91A /* GameViewController.swift */,
+				B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				B4EB4099293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift in Sources */,
 				B4EB406D2938A17B00520181 /* GameRootView.swift in Sources */,
 				B4EB4089293B11A400520181 /* AnswerTextField.swift in Sources */,
+				B4FB65C92ABF0E5000FA0B2A /* GameRouter.swift in Sources */,
 				B4B303F72934EE9E0053B91A /* Difficulty.swift in Sources */,
 				B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */,
 				B4B303E52932A3860053B91A /* AnswerTableViewCell.swift in Sources */,
