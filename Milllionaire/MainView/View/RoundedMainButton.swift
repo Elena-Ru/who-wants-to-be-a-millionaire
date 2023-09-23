@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PurpleButton: UIButton {
+class RoundedMainButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

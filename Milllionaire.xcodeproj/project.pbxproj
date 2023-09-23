@@ -39,7 +39,7 @@
 		B4EB407F293A229600520181 /* AddingQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB407E293A229600520181 /* AddingQuestionViewController.swift */; };
 		B4EB4087293A635100520181 /* AddNewQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4086293A635100520181 /* AddNewQuestionTableViewCell.swift */; };
 		B4EB4089293B11A400520181 /* AnswerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4088293B11A400520181 /* AnswerTextField.swift */; };
-		B4EB408B293B18C100520181 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408A293B18C100520181 /* PurpleButton.swift */; };
+		B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408A293B18C100520181 /* RoundedMainButton.swift */; };
 		B4EB408D293B1CB800520181 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408C293B1CB800520181 /* CustomSwitch.swift */; };
 		B4EB408F293BA8DF00520181 /* AddQuestionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408E293BA8DF00520181 /* AddQuestionRootView.swift */; };
 		B4EB4091293DA51200520181 /* QuestionDataCaretracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4090293DA51200520181 /* QuestionDataCaretracker.swift */; };
@@ -49,6 +49,7 @@
 		B4EB4099293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */; };
 		B4FB65B52ABD903800FA0B2A /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B42ABD903800FA0B2A /* Texts.swift */; };
 		B4FB65B72ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */; };
+		B4FB65B92ABECAC000FA0B2A /* SecondarySystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +88,7 @@
 		B4EB407E293A229600520181 /* AddingQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingQuestionViewController.swift; sourceTree = "<group>"; };
 		B4EB4086293A635100520181 /* AddNewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		B4EB4088293B11A400520181 /* AnswerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTextField.swift; sourceTree = "<group>"; };
-		B4EB408A293B18C100520181 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
+		B4EB408A293B18C100520181 /* RoundedMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedMainButton.swift; sourceTree = "<group>"; };
 		B4EB408C293B1CB800520181 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		B4EB408E293BA8DF00520181 /* AddQuestionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRootView.swift; sourceTree = "<group>"; };
 		B4EB4090293DA51200520181 /* QuestionDataCaretracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataCaretracker.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B4FB65B42ABD903800FA0B2A /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAnimatedViewController.swift; sourceTree = "<group>"; };
+		B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondarySystemButton.swift; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,7 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				B4EB406629388C5500520181 /* MainRootView.swift */,
-				B4EB408A293B18C100520181 /* PurpleButton.swift */,
+				B4EB408A293B18C100520181 /* RoundedMainButton.swift */,
+				B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,7 +471,7 @@
 				B4EB4087293A635100520181 /* AddNewQuestionTableViewCell.swift in Sources */,
 				B4B303F92934F6890053B91A /* ShuffleStrategy.swift in Sources */,
 				B4B303F22933974E0053B91A /* Result+CoreDataClass.swift in Sources */,
-				B4EB408B293B18C100520181 /* PurpleButton.swift in Sources */,
+				B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */,
 				B4FB65B72ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift in Sources */,
 				B4EB4097293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift in Sources */,
 				B4EB40692938995100520181 /* SettingsRootView.swift in Sources */,
@@ -477,6 +480,7 @@
 				B4B303EF29337FB20053B91A /* GameCaretaker.swift in Sources */,
 				B4EB4098293DAD0E00520181 /* AnswerCD+CoreDataClass.swift in Sources */,
 				B4EB406B29389EE100520181 /* ResultsRootView.swift in Sources */,
+				B4FB65B92ABECAC000FA0B2A /* SecondarySystemButton.swift in Sources */,
 				B4B303DF29328ADF0053B91A /* Question.swift in Sources */,
 				B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */,
 				B4B303F52934A3690053B91A /* SettingsViewController.swift in Sources */,
