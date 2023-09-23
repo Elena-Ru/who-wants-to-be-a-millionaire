@@ -12,6 +12,7 @@ class ResultsViewController: UIViewController {
     var currentResults = Game.shared
     var results = Game.shared.results
     var rootView = ResultsRootView()
+    private var router: ResultsRouter!
     
     override func loadView() {
         super.loadView()
@@ -20,6 +21,8 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        router = ResultsRouter(viewController: self)
         title = Texts.results
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -30,7 +33,7 @@ class ResultsViewController: UIViewController {
     }
     
     @objc private func dismissSelf() {
-        dismiss(animated: true)
+        router.closeResults()
     }
 }
 
