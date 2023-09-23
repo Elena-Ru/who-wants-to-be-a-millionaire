@@ -10,7 +10,7 @@ import SnapKit
 
 
 final class MainRootView: UIView {
-  // MARK: - Constatnts
+    // MARK: - Constatnts
     private enum Constants {
         static let logoFontSize: CGFloat = 46
         static let spacingBetweenButtons: CGFloat = 20
@@ -23,12 +23,12 @@ final class MainRootView: UIView {
         static let halfMultiplier: CGFloat = 0.5
         static let widthButtonMultiplier: CGFloat = 0.6
     }
-  // MARK: - UI elemants
+    // MARK: - UI elemants
     let logo : UILabel = {
         let label = UILabel()
         label.text = "QuizQuake"
         label.textColor = .white
-      label.font = UIFont.systemFont(ofSize: Constants.logoFontSize)
+        label.font = UIFont.systemFont(ofSize: Constants.logoFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +48,7 @@ final class MainRootView: UIView {
     let addQuestionButton: SecondarySystemButton = {
       SecondarySystemButton(withImage: "plus.circle")
     }()
-  // MARK: - Inits
+    // MARK: - Inits
     init() {
         super.init(frame: CGRect())
         
@@ -58,7 +58,7 @@ final class MainRootView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-  // MARK: - Private methods
+    // MARK: - Private methods
     private func creatView() {
         setupButtons()
         setupLayout()

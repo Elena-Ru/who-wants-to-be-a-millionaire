@@ -50,6 +50,8 @@
 		B4FB65B52ABD903800FA0B2A /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B42ABD903800FA0B2A /* Texts.swift */; };
 		B4FB65B72ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */; };
 		B4FB65B92ABECAC000FA0B2A /* SecondarySystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */; };
+		B4FB65BB2ABED47300FA0B2A /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */; };
+		B4FB65BD2ABED66F00FA0B2A /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		B4FB65B42ABD903800FA0B2A /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAnimatedViewController.swift; sourceTree = "<group>"; };
 		B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondarySystemButton.swift; sourceTree = "<group>"; };
+		B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +152,7 @@
 				B43331882ABC92110037EC42 /* Localizable.strings */,
 				B4FB65B42ABD903800FA0B2A /* Texts.swift */,
 				B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */,
+				B4FB65BF2ABEE7D500FA0B2A /* BaseRouter */,
 				B4EB407D293A224500520181 /* AddingQuestion */,
 				B4EB4065293889D000520181 /* Service */,
 				B4EB40642938888700520181 /* Game */,
@@ -177,6 +182,7 @@
 			children = (
 				B4EB407A2939B14E00520181 /* View */,
 				B4EB40792939B14000520181 /* Controller */,
+				B4FB65BE2ABEE7B200FA0B2A /* Router */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -342,6 +348,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B4FB65BE2ABEE7B200FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B4FB65BF2ABEE7D500FA0B2A /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */,
+			);
+			path = BaseRouter;
+			sourceTree = "<group>";
+		};
 		BE5AF438C9FA54481552BB5A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +495,7 @@
 				B4B303F22933974E0053B91A /* Result+CoreDataClass.swift in Sources */,
 				B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */,
 				B4FB65B72ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift in Sources */,
+				B4FB65BB2ABED47300FA0B2A /* BaseRouter.swift in Sources */,
 				B4EB4097293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift in Sources */,
 				B4EB40692938995100520181 /* SettingsRootView.swift in Sources */,
 				B4EB407F293A229600520181 /* AddingQuestionViewController.swift in Sources */,
@@ -505,6 +528,7 @@
 				B4B303F72934EE9E0053B91A /* Difficulty.swift in Sources */,
 				B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */,
 				B4B303E52932A3860053B91A /* AnswerTableViewCell.swift in Sources */,
+				B4FB65BD2ABED66F00FA0B2A /* MainViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

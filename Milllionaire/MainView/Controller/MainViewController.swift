@@ -10,7 +10,8 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Properties
-    
+    private var router: MainRouter!
+  
     lazy var gameController: GameViewController = {
         let controller = GameViewController()
         controller.modalPresentationStyle = .fullScreen
@@ -33,6 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        router = MainRouter(viewController: self, gameController: gameController, resultController: resultController)
         setupView()
         setupActions()
     }
@@ -53,27 +55,20 @@ class MainViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func settingsButtonAction(sender: UIButton!) {
-        presentViewController(with: SettingsViewController())
+        router.route(to: .setting)
     }
     
     @objc private func addNewQuestionAction(sender: UIButton!) {
-        presentViewController(with: AddingQuestionViewController())
+        router.route(to: .addNewQuestion)
     }
 
     @objc private func startButtonAction(sender: UIButton!) {
         gameController.difficulty = Game.shared.selectedDifficulty
-        present(gameController, animated: true)
+        router.route(to: .game)
     }
 
     @objc private func resultButtonAction(sender: UIButton!) {
-        presentViewController(with: resultController)
-    }
-    
-    // MARK: - Helper
-    
-    private func presentViewController<T: UIViewController>(with controller: T) {
-        let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+        router.route(to: .results)
+        
     }
 }
