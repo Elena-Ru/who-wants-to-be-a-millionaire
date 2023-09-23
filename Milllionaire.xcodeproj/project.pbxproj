@@ -210,6 +210,7 @@
 		B4EB40642938888700520181 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				B4FB65CA2ABF0FAB00FA0B2A /* Router */,
 				B4EB40722939B05600520181 /* Model */,
 				B4EB40712939B04A00520181 /* View */,
 				B4EB40732939B09300520181 /* Controller */,
@@ -268,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				B4B303E2293291250053B91A /* GameViewController.swift */,
-				B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,6 +388,14 @@
 			isa = PBXGroup;
 			children = (
 				B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B4FB65CA2ABF0FAB00FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
