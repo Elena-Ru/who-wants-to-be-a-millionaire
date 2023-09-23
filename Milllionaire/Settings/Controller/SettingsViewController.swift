@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
     var game = Game.shared
     private var rootView = SettingsRootView()
     private var router: SettingsRouter!
-    private var selectedTheme = "System"
+    private var selectedTheme = UserDefaults.standard.string(forKey: "selectedTheme") ?? "System"
     
     override func loadView() {
       super.loadView()
@@ -78,6 +78,8 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
         for theme in themes {
           let action = UIAlertAction(title: theme, style: .default) { [weak self] _ in
             self?.selectedTheme = theme
+            UserDefaults.standard.set(self?.selectedTheme, forKey: "selectedTheme")
+            UIApplication.shared.windows.first?.applyColorScheme(theme)
             tableView.reloadRows(at: [indexPath], with: .automatic)
           }
           alertController.addAction(action)

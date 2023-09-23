@@ -56,6 +56,7 @@
 		B4FB65C42ABF0C5B00FA0B2A /* ResultsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */; };
 		B4FB65C72ABF0D3300FA0B2A /* AddQuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */; };
 		B4FB65C92ABF0E5000FA0B2A /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */; };
+		B4FB65CC2ABF2BB800FA0B2A /* +UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65CB2ABF2BB800FA0B2A /* +UIWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRouter.swift; sourceTree = "<group>"; };
 		B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRouter.swift; sourceTree = "<group>"; };
 		B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		B4FB65CB2ABF2BB800FA0B2A /* +UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIWindow.swift"; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				B43331882ABC92110037EC42 /* Localizable.strings */,
 				B4FB65B42ABD903800FA0B2A /* Texts.swift */,
 				B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */,
+				B4FB65CB2ABF2BB800FA0B2A /* +UIWindow.swift */,
 				B4FB65BF2ABEE7D500FA0B2A /* BaseRouter */,
 				B4EB407D293A224500520181 /* AddingQuestion */,
 				B4EB4065293889D000520181 /* Service */,
@@ -538,6 +541,7 @@
 				B4FB65C42ABF0C5B00FA0B2A /* ResultsRouter.swift in Sources */,
 				B4EB407F293A229600520181 /* AddingQuestionViewController.swift in Sources */,
 				B4B303E92932C7970053B91A /* Game.swift in Sources */,
+				B4FB65CC2ABF2BB800FA0B2A /* +UIWindow.swift in Sources */,
 				B4B303EF29337FB20053B91A /* GameCaretaker.swift in Sources */,
 				B4EB4098293DAD0E00520181 /* AnswerCD+CoreDataClass.swift in Sources */,
 				B4EB406B29389EE100520181 /* ResultsRootView.swift in Sources */,
