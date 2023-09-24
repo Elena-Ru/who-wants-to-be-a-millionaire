@@ -26,4 +26,11 @@ enum Texts {
     static var ok: String { NSLocalizedString("ok", comment: "") }
     static var wrong: String { NSLocalizedString("wrong", comment: "") }
     static var tryAgain: String { NSLocalizedString("try_again", comment: "") }
+    static var appName: String { NSLocalizedString("app_name", comment: "") }
+    static var cancel: String { NSLocalizedString("cancel", comment: "") }
+    static var system: String { NSLocalizedString("system", comment: "") }
+    static var light: String { NSLocalizedString("light", comment: "") }
+    static var dark: String { NSLocalizedString("dark", comment: "") }
+    static var chooseScheme: String { NSLocalizedString("choose_scheme",   comment: "") }
+    static var colorScheme: String { NSLocalizedString("color_scheme", comment: "") }
 }

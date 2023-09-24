@@ -22,3 +22,10 @@
 "ok" = "OK";
 "wrong" = "Wrong";
 "try_again" = "Try again";
+"app_name" = "QuizQuake";
+"cancel" = "Cancel";
+"system" = "System";
+"light" = "Light";
+"dark" = "Dark";
+"choose_scheme" = "Choose color scheme";
+"color_scheme" = "Color scheme";
