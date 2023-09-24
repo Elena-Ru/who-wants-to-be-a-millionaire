@@ -11,14 +11,15 @@ import CoreData
 
 class GameCaretaker {
     
-    var resultCD : [Result]?
-    var results : [Results]?
+    var resultCD: [Result]?
+    var results: [Results]?
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as? AppDelegate )?.persistentContainer.viewContext
     
-    func saveGame (_ game: [Results])  {
-    
-        deleteFromCD(in : "Result")
+    func saveGame (_ game: [Results]) {
+        guard let context = context else { return }
+      
+        deleteFromCD(in: "Result")
         game.forEach {
             let result = Result(context: context)
             result.procent = $0.procent!
@@ -31,25 +32,22 @@ class GameCaretaker {
         }
     }
     
-    
-    func deleteFromCD(in entity : String) {
-        
-        let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+    func deleteFromCD(in entity: String) {
+      
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
-            try context.execute(deleteRequest)
-            try context.save()
-            } catch {
-                    print ("There was an error")
-            }
+          try context?.execute(deleteRequest)
+          try context?.save()
+        } catch {
+          print("There was an error")
+        }
     }
-    
     
     func loadGame() -> [Results] {
         
         do {
-            resultCD =  try context.fetch(Result.fetchRequest())
+            resultCD =  try context?.fetch(Result.fetchRequest())
             results = transform(resultsFromCD: self.resultCD!)
         } catch {
             print(error)
@@ -60,7 +58,7 @@ class GameCaretaker {
     private func transform( resultsFromCD: [Result]) -> [Results] {
           var results = [Results]()
         resultsFromCD.forEach {
-            var result = Results()
+            let result = Results()
             result.correctAnswerCount = Int($0.correctAnswerCount)
             result.procent = $0.procent
             results.append(result)

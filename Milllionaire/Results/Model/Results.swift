@@ -9,7 +9,7 @@ import Foundation
 
 class Results: Codable {
 
-    var procent : Double?
+    var procent: Double?
     var correctAnswerCount: Int?
     
     init(procent: Double? = nil, correctAnswerCount: Int? = nil) {

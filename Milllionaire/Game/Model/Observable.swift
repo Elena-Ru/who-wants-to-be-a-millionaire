@@ -29,7 +29,6 @@ public struct ObservableOptions: OptionSet, CustomStringConvertible {
     }
 }
 
-
 public class Observable<Type> {
     fileprivate class Callback {
         fileprivate weak var observer: AnyObject?
@@ -88,4 +87,3 @@ public class Observable<Type> {
         callbacksToNotify.forEach { $0.closure(value, option) }
     }
 }
-

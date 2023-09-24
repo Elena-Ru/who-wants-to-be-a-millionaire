@@ -37,7 +37,6 @@ class ResultsViewController: UIViewController {
     }
 }
 
-
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
