@@ -39,7 +39,7 @@
 		B4EB407F293A229600520181 /* AddingQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB407E293A229600520181 /* AddingQuestionViewController.swift */; };
 		B4EB4087293A635100520181 /* AddNewQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4086293A635100520181 /* AddNewQuestionTableViewCell.swift */; };
 		B4EB4089293B11A400520181 /* AnswerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4088293B11A400520181 /* AnswerTextField.swift */; };
-		B4EB408B293B18C100520181 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408A293B18C100520181 /* PurpleButton.swift */; };
+		B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408A293B18C100520181 /* RoundedMainButton.swift */; };
 		B4EB408D293B1CB800520181 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408C293B1CB800520181 /* CustomSwitch.swift */; };
 		B4EB408F293BA8DF00520181 /* AddQuestionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB408E293BA8DF00520181 /* AddQuestionRootView.swift */; };
 		B4EB4091293DA51200520181 /* QuestionDataCaretracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4090293DA51200520181 /* QuestionDataCaretracker.swift */; };
@@ -49,6 +49,14 @@
 		B4EB4099293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */; };
 		B4FB65B52ABD903800FA0B2A /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B42ABD903800FA0B2A /* Texts.swift */; };
 		B4FB65B72ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */; };
+		B4FB65B92ABECAC000FA0B2A /* SecondarySystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */; };
+		B4FB65BB2ABED47300FA0B2A /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */; };
+		B4FB65BD2ABED66F00FA0B2A /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */; };
+		B4FB65C12ABF0A3800FA0B2A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */; };
+		B4FB65C42ABF0C5B00FA0B2A /* ResultsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */; };
+		B4FB65C72ABF0D3300FA0B2A /* AddQuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */; };
+		B4FB65C92ABF0E5000FA0B2A /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */; };
+		B4FB65CC2ABF2BB800FA0B2A /* +UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65CB2ABF2BB800FA0B2A /* +UIWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +95,7 @@
 		B4EB407E293A229600520181 /* AddingQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingQuestionViewController.swift; sourceTree = "<group>"; };
 		B4EB4086293A635100520181 /* AddNewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		B4EB4088293B11A400520181 /* AnswerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTextField.swift; sourceTree = "<group>"; };
-		B4EB408A293B18C100520181 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
+		B4EB408A293B18C100520181 /* RoundedMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedMainButton.swift; sourceTree = "<group>"; };
 		B4EB408C293B1CB800520181 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		B4EB408E293BA8DF00520181 /* AddQuestionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRootView.swift; sourceTree = "<group>"; };
 		B4EB4090293DA51200520181 /* QuestionDataCaretracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataCaretracker.swift; sourceTree = "<group>"; };
@@ -97,6 +105,14 @@
 		B4EB4095293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B4FB65B42ABD903800FA0B2A /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAnimatedViewController.swift; sourceTree = "<group>"; };
+		B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondarySystemButton.swift; sourceTree = "<group>"; };
+		B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
+		B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRouter.swift; sourceTree = "<group>"; };
+		B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRouter.swift; sourceTree = "<group>"; };
+		B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		B4FB65CB2ABF2BB800FA0B2A /* +UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIWindow.swift"; sourceTree = "<group>"; };
 		BB81EF8A95EE402F006E0542 /* Pods-Milllionaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milllionaire.debug.xcconfig"; path = "Target Support Files/Pods-Milllionaire/Pods-Milllionaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +162,8 @@
 				B43331882ABC92110037EC42 /* Localizable.strings */,
 				B4FB65B42ABD903800FA0B2A /* Texts.swift */,
 				B4FB65B62ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift */,
+				B4FB65CB2ABF2BB800FA0B2A /* +UIWindow.swift */,
+				B4FB65BF2ABEE7D500FA0B2A /* BaseRouter */,
 				B4EB407D293A224500520181 /* AddingQuestion */,
 				B4EB4065293889D000520181 /* Service */,
 				B4EB40642938888700520181 /* Game */,
@@ -163,6 +181,7 @@
 		B4EB40612938881C00520181 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B4FB65C22ABF0A5D00FA0B2A /* Router */,
 				B4EB40702939B01D00520181 /* Model */,
 				B4EB40782939B12200520181 /* View */,
 				B4EB40772939B11100520181 /* Controller */,
@@ -175,6 +194,7 @@
 			children = (
 				B4EB407A2939B14E00520181 /* View */,
 				B4EB40792939B14000520181 /* Controller */,
+				B4FB65BE2ABEE7B200FA0B2A /* Router */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -182,6 +202,7 @@
 		B4EB40632938885800520181 /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				B4FB65C52ABF0CE400FA0B2A /* Router */,
 				B4EB40762939B10100520181 /* Model */,
 				B4EB40752939B0F600520181 /* View */,
 				B4EB40742939B0E600520181 /* Controller */,
@@ -192,6 +213,7 @@
 		B4EB40642938888700520181 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				B4FB65CA2ABF0FAB00FA0B2A /* Router */,
 				B4EB40722939B05600520181 /* Model */,
 				B4EB40712939B04A00520181 /* View */,
 				B4EB40732939B09300520181 /* Controller */,
@@ -307,7 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				B4EB406629388C5500520181 /* MainRootView.swift */,
-				B4EB408A293B18C100520181 /* PurpleButton.swift */,
+				B4EB408A293B18C100520181 /* RoundedMainButton.swift */,
+				B4FB65B82ABECAC000FA0B2A /* SecondarySystemButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				B4EB407E293A229600520181 /* AddingQuestionViewController.swift */,
+				B4FB65C62ABF0D3300FA0B2A /* AddQuestionRouter.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +361,46 @@
 				B4EB4088293B11A400520181 /* AnswerTextField.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B4FB65BE2ABEE7B200FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65BC2ABED66F00FA0B2A /* MainViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B4FB65BF2ABEE7D500FA0B2A /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65BA2ABED47300FA0B2A /* BaseRouter.swift */,
+			);
+			path = BaseRouter;
+			sourceTree = "<group>";
+		};
+		B4FB65C22ABF0A5D00FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65C02ABF0A3800FA0B2A /* SettingsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B4FB65C52ABF0CE400FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65C32ABF0C5B00FA0B2A /* ResultsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B4FB65CA2ABF0FAB00FA0B2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB65C82ABF0E5000FA0B2A /* GameRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		BE5AF438C9FA54481552BB5A /* Pods */ = {
@@ -466,19 +530,25 @@
 				B4B303EB2932C85E0053B91A /* GameSession.swift in Sources */,
 				B4B303E3293291250053B91A /* GameViewController.swift in Sources */,
 				B4EB4087293A635100520181 /* AddNewQuestionTableViewCell.swift in Sources */,
+				B4FB65C12ABF0A3800FA0B2A /* SettingsRouter.swift in Sources */,
 				B4B303F92934F6890053B91A /* ShuffleStrategy.swift in Sources */,
 				B4B303F22933974E0053B91A /* Result+CoreDataClass.swift in Sources */,
-				B4EB408B293B18C100520181 /* PurpleButton.swift in Sources */,
+				B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */,
 				B4FB65B72ABDEA0300FA0B2A /* LaunchScreenAnimatedViewController.swift in Sources */,
+				B4FB65BB2ABED47300FA0B2A /* BaseRouter.swift in Sources */,
 				B4EB4097293DAD0E00520181 /* QuestionCD+CoreDataProperties.swift in Sources */,
 				B4EB40692938995100520181 /* SettingsRootView.swift in Sources */,
+				B4FB65C42ABF0C5B00FA0B2A /* ResultsRouter.swift in Sources */,
 				B4EB407F293A229600520181 /* AddingQuestionViewController.swift in Sources */,
 				B4B303E92932C7970053B91A /* Game.swift in Sources */,
+				B4FB65CC2ABF2BB800FA0B2A /* +UIWindow.swift in Sources */,
 				B4B303EF29337FB20053B91A /* GameCaretaker.swift in Sources */,
 				B4EB4098293DAD0E00520181 /* AnswerCD+CoreDataClass.swift in Sources */,
 				B4EB406B29389EE100520181 /* ResultsRootView.swift in Sources */,
+				B4FB65B92ABECAC000FA0B2A /* SecondarySystemButton.swift in Sources */,
 				B4B303DF29328ADF0053B91A /* Question.swift in Sources */,
 				B4B303C52931F70C0053B91A /* MainViewController.swift in Sources */,
+				B4FB65C72ABF0D3300FA0B2A /* AddQuestionRouter.swift in Sources */,
 				B4B303F52934A3690053B91A /* SettingsViewController.swift in Sources */,
 				B4EB407C2939E81500520181 /* Observable.swift in Sources */,
 				B4EB4096293DAD0E00520181 /* QuestionCD+CoreDataClass.swift in Sources */,
@@ -498,9 +568,11 @@
 				B4EB4099293DAD0E00520181 /* AnswerCD+CoreDataProperties.swift in Sources */,
 				B4EB406D2938A17B00520181 /* GameRootView.swift in Sources */,
 				B4EB4089293B11A400520181 /* AnswerTextField.swift in Sources */,
+				B4FB65C92ABF0E5000FA0B2A /* GameRouter.swift in Sources */,
 				B4B303F72934EE9E0053B91A /* Difficulty.swift in Sources */,
 				B4B303C32931F70C0053B91A /* SceneDelegate.swift in Sources */,
 				B4B303E52932A3860053B91A /* AnswerTableViewCell.swift in Sources */,
+				B4FB65BD2ABED66F00FA0B2A /* MainViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

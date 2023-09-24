@@ -14,7 +14,7 @@ final class GameRootView: UIView {
        let label = UILabel()
        label.translatesAutoresizingMaskIntoConstraints = false
        label.numberOfLines = 0
-       label.textColor = .white
+       label.textColor = UIColor(named: "title")
        label.font = UIFont.boldSystemFont(ofSize: 16)
        label.textAlignment = .center
        return label
@@ -24,7 +24,7 @@ final class GameRootView: UIView {
        let label = UILabel()
        label.translatesAutoresizingMaskIntoConstraints = false
        label.numberOfLines = 0
-       label.textColor = .white
+       label.textColor = UIColor(named: "title")
        label.font = UIFont.boldSystemFont(ofSize: 16)
        label.textAlignment = .center
        return label
@@ -34,7 +34,7 @@ final class GameRootView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = UIColor(named: "title")
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textAlignment = .center
         return label

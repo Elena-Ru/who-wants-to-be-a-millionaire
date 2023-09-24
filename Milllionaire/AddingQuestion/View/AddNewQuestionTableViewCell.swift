@@ -15,7 +15,7 @@ class AddQuestionTableViewCell: UITableViewCell {
         let questionLabel: UILabel = {
             let label = UILabel()
             label.text = Texts.enterQuestion
-            label.textColor = .white
+            label.textColor = UIColor(named: "title")
             label.font = UIFont.systemFont(ofSize: 18)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label

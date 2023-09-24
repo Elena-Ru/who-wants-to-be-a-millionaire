@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
     var rootView = GameRootView()
     var questionsWithStrategy : [Question]!
     var data = QuestionData.shared
+    private var router: GameRouter!
    
     private var shuffleStrategy: ShuffleStrategy {
         switch self.difficulty {
@@ -40,6 +41,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        router = GameRouter(viewController: self)
         view.backgroundColor = UIColor(named: "background")
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
@@ -79,7 +82,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell()}
         
         cell.textLabel?.text = currentQuestion?.answers[indexPath.row].text
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = UIColor(named: "title")
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         cell.backgroundColor = UIColor(named: "accent")
         cell.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
@@ -106,30 +109,23 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
                     tableView.reloadData()
                 }
                 else {
-                  let alert = UIAlertController(title: Texts.gameOver, message: Texts.congratulations, preferredStyle: .alert)
-                      alert.addAction(UIAlertAction(title: Texts.ok, style: .cancel, handler: { action in
-                        alert.dismiss(animated: true, completion: nil)
-                        self.dismiss(animated: true)
-                        }
-                    )
-                    )
+                    router.presentAlert(title: Texts.gameOver, message: Texts.congratulations) {
+                              self.router.closeGame()
+                              self.gameDelegate?.didEndGame(withResult: Results(procent: self.currentResults.session?.procent.value, correctAnswerCount: self.corAnswer))
+                          }
                     currentResults.session?.procent.value = currentResults.corAnswerProcent(correctAnswerCount: corAnswer, totalQuestionCount: questionsWithStrategy.count)
                     gameDelegate?.didEndGame(withResult: Results(procent: currentResults.session?.procent.value, correctAnswerCount: corAnswer))
-                    present(alert, animated: true)
                     corAnswer = 0
                     currentQuestion = questionsWithStrategy[0]
                 }
             }
         } else {
-          let alert = UIAlertController(title: Texts.wrong, message: Texts.tryAgain, preferredStyle: .alert)
-              alert.addAction(UIAlertAction(title: Texts.ok, style: .cancel, handler: { action in
-                alert.dismiss(animated: true, completion: nil)
-                self.dismiss(animated: true)
-                }
-            )
-            )
+
+            router.presentAlert(title: Texts.wrong, message: Texts.tryAgain) {
+                      self.router.closeGame()
+                      self.gameDelegate?.didEndGame(withResult: Results(procent: self.currentResults.session?.procent.value, correctAnswerCount: self.corAnswer))
+                  }
             gameDelegate?.didEndGame(withResult: Results(procent: currentResults.session?.procent.value, correctAnswerCount: corAnswer))
-            present(alert, animated: true)
             corAnswer = 0
             currentQuestion = questionsWithStrategy[0]
         }

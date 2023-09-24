@@ -10,46 +10,45 @@ import SnapKit
 
 
 final class MainRootView: UIView {
-    
+    // MARK: - Constatnts
+    private enum Constants {
+        static let logoFontSize: CGFloat = 46
+        static let spacingBetweenButtons: CGFloat = 20
+        static let bottomSpace: CGFloat = -40
+        static let heightControlStack: CGFloat = 100
+        static let heightSystemButton: CGFloat = 40
+        static let topInsets: CGFloat = 50
+        static let trailingInsets: CGFloat = -30
+        static let systemButtonsInsets: CGFloat = 25
+        static let halfMultiplier: CGFloat = 0.5
+        static let widthButtonMultiplier: CGFloat = 0.6
+    }
+    // MARK: - UI elemants
     let logo : UILabel = {
         let label = UILabel()
         label.text = "QuizQuake"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 46)
+        label.textColor = UIColor(named: "title")
+        label.font = UIFont.systemFont(ofSize: Constants.logoFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let settingsButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "gear"), for: .normal)
-        btn.tintColor = .white
-        btn.contentHorizontalAlignment = .fill
-        btn.contentVerticalAlignment = .fill
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    let startButton: PurpleButton = {
-        let btn = PurpleButton(title: Texts.start)
-        return btn
+    let startButton: RoundedMainButton = {
+        RoundedMainButton(title: Texts.start)
     }()
         
-    let resultButton: PurpleButton = {
-        let btn = PurpleButton(title: Texts.results)
-        return btn
+    let resultButton: RoundedMainButton = {
+        RoundedMainButton(title: Texts.results)
     }()
     
-    let addQuestionButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "plus.circle"), for: .normal)
-        btn.tintColor = .white
-        btn.contentHorizontalAlignment = .fill
-        btn.contentVerticalAlignment = .fill
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+    let settingsButton: SecondarySystemButton = {
+      SecondarySystemButton(withImage: "gear")
     }()
     
+    let addQuestionButton: SecondarySystemButton = {
+      SecondarySystemButton(withImage: "plus.circle")
+    }()
+    // MARK: - Inits
     init() {
         super.init(frame: CGRect())
         
@@ -59,7 +58,7 @@ final class MainRootView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: - Private methods
     private func creatView() {
         setupButtons()
         setupLayout()
@@ -70,8 +69,8 @@ final class MainRootView: UIView {
         let controlsStackView = UIStackView(arrangedSubviews: [startButton, resultButton])
         controlsStackView.translatesAutoresizingMaskIntoConstraints = false
         controlsStackView.distribution = .fillEqually
-        controlsStackView.setCustomSpacing(20, after: startButton)
-        controlsStackView.setCustomSpacing(20, after: resultButton)
+        controlsStackView.setCustomSpacing(Constants.spacingBetweenButtons, after: startButton)
+        controlsStackView.setCustomSpacing(Constants.spacingBetweenButtons, after: resultButton)
         controlsStackView.axis = .vertical
         
         addSubview(controlsStackView)
@@ -79,9 +78,9 @@ final class MainRootView: UIView {
         controlsStackView.snp.makeConstraints { (make) -> Void in
         
           make.centerX.equalTo(self.snp.centerX)
-          make.bottom.equalTo(self.snp_bottomMargin).offset(-40)
-          make.width.equalTo(self.snp.width).multipliedBy(0.6)
-          make.height.equalTo(100)
+          make.bottom.equalTo(self.snp_bottomMargin).offset(Constants.bottomSpace)
+          make.width.equalTo(self.snp.width).multipliedBy(Constants.widthButtonMultiplier)
+          make.height.equalTo(Constants.heightControlStack)
         }
     }
     
@@ -99,7 +98,7 @@ final class MainRootView: UIView {
           make.top.equalTo(self.snp_topMargin)
           make.leading.equalTo(self.snp_leadingMargin)
           make.trailing.equalTo(self.snp_trailingMargin)
-          make.height.equalTo(self.snp.height).multipliedBy(0.5)
+          make.height.equalTo(self.snp.height).multipliedBy(Constants.halfMultiplier)
         }
         
         logo.snp.makeConstraints { (make) -> Void in
@@ -109,16 +108,16 @@ final class MainRootView: UIView {
         
         settingsButton.snp.makeConstraints { (make) -> Void in
         
-          make.top.equalTo(topImageContainerView.snp.top).offset(50)
-          make.trailing.equalTo(self.snp_trailingMargin).offset(-30)
-          make.width.height.equalTo(40)
+          make.top.equalTo(topImageContainerView.snp.top).offset(Constants.topInsets)
+          make.trailing.equalTo(self.snp_trailingMargin).offset(Constants.trailingInsets)
+          make.width.height.equalTo(Constants.heightSystemButton)
         }
         
         addQuestionButton.snp.makeConstraints { (make) -> Void in
         
-          make.top.equalTo(settingsButton.snp.bottom).offset(25)
-          make.trailing.equalTo(self.snp_trailingMargin).offset(-30)
-          make.width.height.equalTo(40)
+          make.top.equalTo(settingsButton.snp.bottom).offset(Constants.systemButtonsInsets)
+          make.trailing.equalTo(self.snp_trailingMargin).offset(Constants.trailingInsets)
+          make.width.height.equalTo(Constants.heightSystemButton)
         }
     }
 }
