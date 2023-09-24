@@ -46,6 +46,9 @@ final class GameRootView: UIView {
         tableView.register(AnswerTableViewCell.self, forCellReuseIdentifier: AnswerTableViewCell.identifier)
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .clear
+        tableView.contentInset =  .zero
+        tableView.layer.cornerRadius = 20.0
+        tableView.clipsToBounds = true
         return tableView
     }()
     
@@ -121,10 +124,10 @@ final class GameRootView: UIView {
       
         tableView.snp.makeConstraints { (make) -> Void in
         
-          make.top.equalTo(topImageContainerView.snp.bottom).offset(10)
+          make.top.equalTo(topImageContainerView.snp.bottom).offset(40)
           make.leading.equalTo(topImageContainerView.snp.leading)
           make.trailing.equalTo(topImageContainerView.snp.trailing)
-          make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(12)
+          make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-30)
         }
     }
 }

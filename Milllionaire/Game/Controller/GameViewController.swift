@@ -71,27 +71,47 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  
+    func numberOfSections(in tableView: UITableView) -> Int {
         currentQuestion?.answers.count ?? 0
+    }
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard  let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell()}
-        
-        cell.textLabel?.text = currentQuestion?.answers[indexPath.row].text
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell() }
+    
+        cell.textLabel?.text = currentQuestion?.answers[indexPath.section].text
         cell.textLabel?.textColor = UIColor(named: "title")
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        cell.backgroundColor = UIColor(named: "accent")
-        cell.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
-        cell.layer.borderWidth = 2
+    
+        cell.contentView.backgroundColor = UIColor(named: "accent")
+        cell.contentView.layer.cornerRadius = 20.0
+        cell.contentView.layer.borderWidth = 2
+        cell.contentView.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
+        cell.contentView.clipsToBounds = true
+  
+        cell.backgroundColor = .clear
+        cell.layer.borderWidth = 0
+    
         return cell
+    }
+  
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+         10.0
+    }
+  
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        UIView()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let question = currentQuestion else { return }
         
-        let answer = question.answers[indexPath.row]
+        let answer = question.answers[indexPath.section]
         if checkAnswer(answer: answer, question: question) {
             
             if let index = questionsWithStrategy.firstIndex(where: { $0.text == question.text}) {
@@ -125,6 +145,10 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
             corAnswer = 0
             currentQuestion = questionsWithStrategy[0]
         }
+    }
+  
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return (tableView.frame.size.height - 30 ) / 4
     }
     
 }
