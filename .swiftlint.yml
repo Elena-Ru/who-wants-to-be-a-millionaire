@@ -1,0 +1,24 @@
+line_length:
+ - 200 # warning
+ - 250 # error
+disabled_rules:
+- nesting
+- todo
+- trailing_whitespace
+- void_function_in_ternary
+- inclusive_language
+type_name:
+  allowed_symbols: "_"
+identifier_name:
+  min_length: 2
+excluded:
+- Pods
+- KeychainAccess
+cyclomatic_complexity:
+- 15 # warning
+function_body_length:
+- 60 # warning
+file_length:
+- 600 #disable
+type_body_length:
+- 1000 #warning

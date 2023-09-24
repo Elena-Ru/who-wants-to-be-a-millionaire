@@ -9,7 +9,6 @@ import UIKit
 
 class AddQuestionTableViewCell: UITableViewCell {
     
-    
     static let identifier = "addCell"
     
         let questionLabel: UILabel = {

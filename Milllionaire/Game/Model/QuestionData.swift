@@ -32,7 +32,8 @@ class QuestionData {
                                                                                 Answer(text: "Elsa", isCorrect: false)
                                                                                ]
                 ),
-        Question(text: "What name is given to the revolving belt machinery in an airport that delivers checked luggage from the plane to baggage reclaim?", answers: [Answer(text: "Carousel", isCorrect: true),
+        Question(text: "What name is given to the revolving belt machinery in an airport that delivers checked luggage from the plane to baggage reclaim?",
+                 answers: [Answer(text: "Carousel", isCorrect: true),
                                                                                 Answer(text: "Concourse", isCorrect: false),
                                                                                 Answer(text: "Terminal", isCorrect: false),
                                                                                 Answer(text: "Hangar", isCorrect: false)
@@ -45,19 +46,18 @@ class QuestionData {
                                                                                ]
                 )
     ]
-    
+  
     var dataUser: [Question] {
         didSet {
             questionCaretaker.saveQuestions(self.dataUser)
         }
     }
-    
-    var dataAll: [Question]{
+  
+    var dataAll: [Question] {
          self.data + self.dataUser
     }
-    
+  
     private init() {
         self.dataUser = self.questionCaretaker.loadQuestions()
     }
-    
 }

@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-
 final class MainRootView: UIView {
     // MARK: - Constatnts
     private enum Constants {
@@ -24,7 +23,7 @@ final class MainRootView: UIView {
         static let widthButtonMultiplier: CGFloat = 0.6
     }
     // MARK: - UI elemants
-    let logo : UILabel = {
+    let logo: UILabel = {
         let label = UILabel()
         label.text = "QuizQuake"
         label.textColor = UIColor(named: "title")

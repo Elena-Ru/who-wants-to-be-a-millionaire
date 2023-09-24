@@ -19,7 +19,7 @@ class Game {
       return Double(correctAnswerCount * 100 / totalQuestionCount)
     }
     
-   var results : [Results] {
+   var results: [Results] {
         didSet {
             resultsCaretaker.saveGame(self.results)
         }
@@ -27,7 +27,7 @@ class Game {
     
     static let shared = Game()
     
-    private init(){
+    private init() {
         self.results = self.resultsCaretaker.loadGame()
     }
 }

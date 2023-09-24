@@ -12,7 +12,6 @@ class LaunchScreenAnimatedViewController: UIViewController {
   let circleDiameter: CGFloat = 15.0
   let triangleSideLength: CGFloat = 90.0
   
-  
   override func viewDidLoad() {
       super.viewDidLoad()
       view.backgroundColor = UIColor(named: "background")
@@ -25,8 +24,6 @@ class LaunchScreenAnimatedViewController: UIViewController {
         animateCircle(circle, along: path, startingAt: CGFloat(index) *   1.0/3.0)
       }
   }
-  
-  
   
   func createCircle(with color: UIColor) -> UIView {
       let circle = UIView(frame: CGRect(x: 0, y: 0, width: circleDiameter, height: circleDiameter))
@@ -58,7 +55,6 @@ class LaunchScreenAnimatedViewController: UIViewController {
         return .zero
       }
   }
-  
   
   func animateCircle(_ circle: UIView, along path: UIBezierPath, startingAt fraction: CGFloat) {
       let animation = CAKeyframeAnimation(keyPath: "position")

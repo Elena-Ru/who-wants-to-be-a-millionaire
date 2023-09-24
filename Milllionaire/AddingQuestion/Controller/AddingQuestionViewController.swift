@@ -10,7 +10,7 @@ import UIKit
 class AddingQuestionViewController: UIViewController {
 
     var rootView = AddQuestionRootView()
-    var question : Question?
+    var question: Question?
     var answers = [Answer]()
     var data = QuestionData.shared
     private var router: AddQuestionRouter!
@@ -42,12 +42,12 @@ class AddingQuestionViewController: UIViewController {
     @objc func addQuestion(sender: UIButton!) {
         
         let indexPath = IndexPath(row: 0, section: 0)
-        let cell = rootView.tableView.cellForRow(at: indexPath) as! AddQuestionTableViewCell
-        let questionText = cell.questionText.text
-        let correctAnswer = cell.correctAnswer.text
-        let wrongAnswer1  = cell.wrongAnswer1.text
-        let wrongAnswer2  = cell.wrongAnswer2.text
-        let wrongAnswer3  = cell.wrongAnswer3.text
+        let cell = rootView.tableView.cellForRow(at: indexPath) as? AddQuestionTableViewCell
+        let questionText = cell?.questionText.text
+        let correctAnswer = cell?.correctAnswer.text
+        let wrongAnswer1  = cell?.wrongAnswer1.text
+        let wrongAnswer2  = cell?.wrongAnswer2.text
+        let wrongAnswer3  = cell?.wrongAnswer3.text
         
         if questionText == "" ||
             correctAnswer == "" ||
@@ -55,7 +55,7 @@ class AddingQuestionViewController: UIViewController {
             wrongAnswer2 == "" ||
             wrongAnswer3 == "" {
             let alert = UIAlertController(title: "Warning", message: "Please, enter all fields", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
                 alert.dismiss(animated: true, completion: nil)
             }
             )
@@ -72,7 +72,7 @@ class AddingQuestionViewController: UIViewController {
             data.dataUser.append(question!)
             
              let alert = UIAlertController(title: nil, message: "Your question was successfully added", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
                  alert.dismiss(animated: true, completion: nil)
              }
              )
@@ -104,5 +104,3 @@ extension AddingQuestionViewController: UITableViewDelegate, UITableViewDataSour
         400
     }
 }
-
-

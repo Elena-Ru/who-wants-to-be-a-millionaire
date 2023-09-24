@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController,  UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
     var game = Game.shared
     private var rootView = SettingsRootView()
@@ -25,9 +25,9 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
       router = SettingsRouter(viewController: self)
       view.backgroundColor = UIColor(named: "background")
       self.title = Texts.settings
-      let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+      let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
       navigationController?.navigationBar.titleTextAttributes = textAttributes
-      navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.dismiss, style: .plain,  target: self, action: #selector(dismissSelf))
+      navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.dismiss, style: .plain, target: self, action: #selector(dismissSelf))
       rootView.tableView.dataSource = self
       rootView.tableView.delegate = self
     }
@@ -42,14 +42,14 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
       return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->  UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       if indexPath.section == 0 {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = Texts.shuffle
         cell.textLabel?.textColor = UIColor(named: "text")
         let shuffleSwitch = UISwitch()
         shuffleSwitch.isOn = setPosition()
-        shuffleSwitch.addTarget(self, action: #selector(shuffleSwitchChanged(_:)), for:   .valueChanged)
+        shuffleSwitch.addTarget(self, action: #selector(shuffleSwitchChanged(_:)), for: .valueChanged)
     
         cell.accessoryView = shuffleSwitch
         cell.backgroundColor = UIColor(named: "secondaryBackground")
@@ -72,7 +72,7 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
       if indexPath.section == 1 {
         tableView.deselectRow(at: indexPath, animated: true)
     
-        let alertController = UIAlertController(title: nil, message: "Choose color scheme",   preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: "Choose color scheme", preferredStyle: .actionSheet)
     
         let themes = ["System", "Light", "Dark"]
         for theme in themes {
@@ -92,10 +92,17 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
       }
     }
   
+    private  func setPosition() -> Bool {
+      if Game.shared.selectedDifficulty == .easy {
+        return false
+      } else {
+        return true
+      }
+    }
   // MARK: - Actions
   
     @objc private func shuffleSwitchChanged(_ sender: UISwitch) {
-      if (sender.isOn == true){
+      if sender.isOn == true {
         game.selectedDifficulty = .medium
       } else {
         game.selectedDifficulty = .easy
@@ -104,13 +111,5 @@ class SettingsViewController: UIViewController,  UITableViewDataSource, UITableV
     
     @objc private func dismissSelf() {
       router.closeSettings()
-    }
-}
-
-fileprivate  func setPosition() -> Bool {
-    if Game.shared.selectedDifficulty == .easy {
-      return false
-    } else {
-      return true
     }
 }

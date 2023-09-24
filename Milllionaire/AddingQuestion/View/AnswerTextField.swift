@@ -7,13 +7,13 @@
 
 import UIKit
 
-class AnswerTextField : UITextField {
+class AnswerTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame) 
     }
     
-    init(title: String){
+    init(title: String) {
         super.init(frame: .zero)
         placeholder = title
         font = UIFont.systemFont(ofSize: 17)

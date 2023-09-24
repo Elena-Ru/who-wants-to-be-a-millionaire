@@ -14,11 +14,12 @@ class QuestionDataCaretracker {
     var questionData: [Question]?
     var questionCD: [QuestionCD]?
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as? AppDelegate )?.persistentContainer.viewContext
     
     func saveQuestions(_ questions: [Question]) {
-        
-        deleteFromCD(in : "QuestionCD")
+        guard let context = context else { return }
+      
+        deleteFromCD(in: "QuestionCD")
         questions.forEach {
             let qt = QuestionCD(context: context)
             qt.text = $0.text
@@ -37,21 +38,22 @@ class QuestionDataCaretracker {
         }
     }
     
-    func deleteFromCD(in entity : String) {
-        
-        let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+    func deleteFromCD(in entity: String) {
+        guard let context = context else { return }
+      
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
             try context.execute(deleteRequest)
             try context.save()
             } catch {
-                    print ("There was an error")
+                    print("There was an error")
             }
     }
     
     func loadQuestions() -> [Question] {
-
+      guard let context = context else { return [] }
+      
         do {
             questionCD =  try context.fetch(QuestionCD.fetchRequest())
             questionData = transform(resultsFromCD: self.questionCD!)
@@ -68,9 +70,9 @@ class QuestionDataCaretracker {
             var answersCD = [Answer]()
             let text = $0.text
             let setAnswers = $0.answers
-            let  answArray = setAnswers?.allObjects as! [AnswerCD]
+            let  answArray = setAnswers?.allObjects as? [AnswerCD]
             
-            answArray.forEach {
+            answArray?.forEach {
                 let answerText = $0.answerText
                 let answerIsCorrect = $0.isCorrect
                 let answer = Answer(text: answerText ?? "1+1=?", isCorrect: answerIsCorrect)
