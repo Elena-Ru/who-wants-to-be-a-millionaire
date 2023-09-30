@@ -26,7 +26,7 @@ final class MainRootView: UIView {
     // MARK: - UI elemants
     let logo: UILabel = {
         let label = UILabel()
-        label.text = Texts.appName
+        label.text = R.string.localizable.appName()
         label.textColor = R.color.title()
         label.font = UIFont.systemFont(ofSize: Constants.logoFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,11 +34,11 @@ final class MainRootView: UIView {
     }()
     
     let startButton: RoundedMainButton = {
-        RoundedMainButton(title: Texts.start)
+        RoundedMainButton(title: R.string.localizable.start())
     }()
         
     let resultButton: RoundedMainButton = {
-        RoundedMainButton(title: Texts.results)
+      RoundedMainButton(title: R.string.localizable.results())
     }()
     
     let settingsButton: SecondarySystemButton = {

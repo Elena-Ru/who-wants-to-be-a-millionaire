@@ -22,7 +22,7 @@ final class AddQuestionRootView: UIView {
     let addButton: UIButton = {
         let btn = UIButton()
         btn.layer.backgroundColor = R.color.accent()?.cgColor
-        btn.setTitle(Texts.add, for: .normal)
+        btn.setTitle(R.string.localizable.add(), for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         btn.layer.cornerRadius = 20

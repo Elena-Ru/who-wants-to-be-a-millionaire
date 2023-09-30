@@ -57,10 +57,10 @@ final class GameViewController: UIViewController {
 
     func configureUI(question: Question) {
         currentResults.session?.currentQuestionNumber.addObserver(self, options: [.new, .initial], closure: { [weak self] (numberOfQuestion, _) in
-          self?.rootView.questionNumberLabel.text = String(format: Texts.question, numberOfQuestion)
+          self?.rootView.questionNumberLabel.text = String(format: R.string.localizable.questionN(numberOfQuestion))
         })
         currentResults.session?.procent.addObserver(self, options: [.new, .initial], closure: { [weak self] (procent, _) in
-            self?.rootView.correctAnswerProcentLabel.text = String(format: Texts.success, procent)
+          self?.rootView.correctAnswerProcentLabel.text = String(format: R.string.localizable.success(procent))
         })
         rootView.questionLabel.text = question.text
         currentQuestion = question
@@ -145,7 +145,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
     }
   
     private func finishGameSuccessfully() {
-        router.presentAlert(title: Texts.gameOver, message: Texts.congratulations) {
+        router.presentAlert(title: R.string.localizable.gameOver(), message: R.string.localizable.congratulations()) {
             self.router.closeGame()
             self.gameDelegate?.didEndGame(withResult: Results(procent: self.currentResults.session?.procent.value, correctAnswerCount: self.corAnswer))
         }
@@ -156,7 +156,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     private func handleIncorrectAnswer() {
-        router.presentAlert(title: Texts.wrong, message: Texts.tryAgain) {
+        router.presentAlert(title: R.string.localizable.wrong(), message: R.string.localizable.tryAgain()) {
             self.router.closeGame()
             self.gameDelegate?.didEndGame(withResult: Results(procent: self.currentResults.session?.procent.value, correctAnswerCount: self.corAnswer))
         }

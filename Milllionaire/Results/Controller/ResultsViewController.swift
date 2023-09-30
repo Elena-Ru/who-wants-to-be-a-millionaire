@@ -24,10 +24,10 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
       
         router = ResultsRouter(viewController: self)
-        title = Texts.results
+        title = R.string.localizable.results()
         let textAttributes = [NSAttributedString.Key.foregroundColor: R.color.title()]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.dismiss, style: .plain, target: self, action: #selector(dismissSelf))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.dismiss(), style: .plain, target: self, action: #selector(dismissSelf))
         view.backgroundColor = R.color.background()
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
