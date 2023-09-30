@@ -14,7 +14,7 @@ class GameRouter: BaseRouter<GameViewController> {
 
     func presentAlert(title: String, message: String, completionHandler: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Texts.ok, style: .cancel, handler: { _ in
+        alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: { _ in
             completionHandler?()
             alert.dismiss(animated: true, completion: nil)
         }))

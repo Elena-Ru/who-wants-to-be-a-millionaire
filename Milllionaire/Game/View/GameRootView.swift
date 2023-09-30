@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RswiftResources
 
 final class GameRootView: UIView {
     
@@ -14,7 +15,7 @@ final class GameRootView: UIView {
        let label = UILabel()
        label.translatesAutoresizingMaskIntoConstraints = false
        label.numberOfLines = 0
-       label.textColor = UIColor(named: "title")
+       label.textColor = R.color.title()
        label.font = UIFont.boldSystemFont(ofSize: 16)
        label.textAlignment = .center
        return label
@@ -24,7 +25,7 @@ final class GameRootView: UIView {
        let label = UILabel()
        label.translatesAutoresizingMaskIntoConstraints = false
        label.numberOfLines = 0
-       label.textColor = UIColor(named: "title")
+       label.textColor = R.color.title()
        label.font = UIFont.boldSystemFont(ofSize: 16)
        label.textAlignment = .center
        return label
@@ -34,7 +35,7 @@ final class GameRootView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textColor = UIColor(named: "title")
+        label.textColor = R.color.title()
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textAlignment = .center
         return label
@@ -64,17 +65,17 @@ final class GameRootView: UIView {
     private func setupLayout() {
         
         let topLabelContainerView = UIView()
-        topLabelContainerView.backgroundColor = UIColor(named: "accent")
+        topLabelContainerView.backgroundColor = R.color.accent()
         topLabelContainerView.layer.cornerRadius = 30
         topLabelContainerView.layer.borderWidth = 2
-        topLabelContainerView.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
+        topLabelContainerView.layer.borderColor = R.color.darkOrange()?.cgColor
         topLabelContainerView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(topLabelContainerView)
         topLabelContainerView.addSubview(questionNumberLabel)
         topLabelContainerView.addSubview(correctAnswerProcentLabel)
         
         let topImageContainerView = UIView()
-        topImageContainerView.backgroundColor = UIColor(named: "secondaryBackground")
+        topImageContainerView.backgroundColor = R.color.secondaryBackground()
         topImageContainerView.layer.cornerRadius = 30
         topImageContainerView.layer.borderWidth = 2
         self.addSubview(topImageContainerView)

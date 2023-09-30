@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RswiftResources
 
 final class AddQuestionRootView: UIView {
     
@@ -14,18 +15,18 @@ final class AddQuestionRootView: UIView {
        let tableView = UITableView()
        tableView.translatesAutoresizingMaskIntoConstraints = false
        tableView.register(AddQuestionTableViewCell.self, forCellReuseIdentifier: AddQuestionTableViewCell.identifier)
-       tableView.backgroundColor = UIColor(named: "secondaryBackground")
+       tableView.backgroundColor = R.color.secondaryBackground()
        return tableView
    }()
 
     let addButton: UIButton = {
         let btn = UIButton()
-        btn.layer.backgroundColor = UIColor(named: "accent")?.cgColor
-        btn.setTitle(Texts.add, for: .normal)
+        btn.layer.backgroundColor = R.color.accent()?.cgColor
+        btn.setTitle(R.string.localizable.add(), for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         btn.layer.cornerRadius = 20
-        btn.layer.borderColor =  UIColor(named: "darkOrange")?.cgColor
+        btn.layer.borderColor =  R.color.darkOrange()?.cgColor
         btn.layer.borderWidth = 2.0
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

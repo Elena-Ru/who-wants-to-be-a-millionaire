@@ -14,7 +14,7 @@ final class SettingsRootView: UIView {
     
     override init(frame: CGRect) {
         tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = UIColor(named: "background")
+        tableView.backgroundColor = R.color.background()
         super.init(frame: frame)
         
         setupView()

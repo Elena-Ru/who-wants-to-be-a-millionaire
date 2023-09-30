@@ -24,11 +24,11 @@ class AddingQuestionViewController: UIViewController {
         super.viewDidLoad()
       
         router = AddQuestionRouter(viewController: self)
-        view.backgroundColor = UIColor(named: "background")
-        title = Texts.addQuestion
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "title")]
+        view.backgroundColor = R.color.background()
+        title = R.string.localizable.addQuestion()
+        let textAttributes = [NSAttributedString.Key.foregroundColor: R.color.title()]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.dismiss, style: .plain, target: self, action: #selector(dismissSelf))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.dismiss(), style: .plain, target: self, action: #selector(dismissSelf))
        
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self

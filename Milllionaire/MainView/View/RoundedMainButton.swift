@@ -14,12 +14,12 @@ class RoundedMainButton: UIButton {
     
      init(title: String) {
         super.init(frame: .zero)
-        layer.backgroundColor = UIColor(named: "accent")?.cgColor
+        layer.backgroundColor = R.color.accent()?.cgColor
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         layer.cornerRadius = 20
-        layer.borderColor = UIColor(named: "darkOrange")?.cgColor
+        layer.borderColor = R.color.darkOrange()?.cgColor
         layer.borderWidth = 2.0
         translatesAutoresizingMaskIntoConstraints = false
     }

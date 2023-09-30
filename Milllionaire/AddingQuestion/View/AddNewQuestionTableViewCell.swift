@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RswiftResources
 
 class AddQuestionTableViewCell: UITableViewCell {
     
@@ -13,8 +14,8 @@ class AddQuestionTableViewCell: UITableViewCell {
     
         let questionLabel: UILabel = {
             let label = UILabel()
-            label.text = Texts.enterQuestion
-            label.textColor = UIColor(named: "title")
+            label.text = R.string.localizable.enterQuestion()
+            label.textColor = R.color.title()
             label.font = UIFont.systemFont(ofSize: 18)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
@@ -26,7 +27,7 @@ class AddQuestionTableViewCell: UITableViewCell {
             textView.layer.masksToBounds = true
             textView.layer.cornerRadius = 20.0
             textView.layer.borderWidth = 1
-            textView.layer.borderColor = UIColor(named: "accent")?.cgColor
+            textView.layer.borderColor = R.color.accent()?.cgColor
             textView.font = UIFont.systemFont(ofSize: 16.0)
             textView.textColor = UIColor.black
             textView.textAlignment = NSTextAlignment.left
@@ -39,19 +40,19 @@ class AddQuestionTableViewCell: UITableViewCell {
         }()
     
     var correctAnswer: AnswerTextField = {
-       AnswerTextField(title: Texts.enterCorrectAnswer)
+        AnswerTextField(title: R.string.localizable.enterCorrectAnswer())
     }()
     
     var wrongAnswer1: AnswerTextField = {
-       AnswerTextField(title: String(format: Texts.enterIncorrectAnswer, 1))
+        AnswerTextField(title: String(format: R.string.localizable.enterIncorrectAnswer(1)))
     }()
     
     var wrongAnswer2: AnswerTextField = {
-       AnswerTextField(title: String(format: Texts.enterIncorrectAnswer, 2))
+        AnswerTextField(title: String(format: R.string.localizable.enterIncorrectAnswer(2)))
     }()
     
     var wrongAnswer3: AnswerTextField = {
-       AnswerTextField(title: String(format: Texts.enterIncorrectAnswer, 3))
+        AnswerTextField(title: String(format: R.string.localizable.enterIncorrectAnswer(3)))
     }()
 
     override func awakeFromNib() {
@@ -64,7 +65,7 @@ class AddQuestionTableViewCell: UITableViewCell {
     
      func setupLayout() {
          
-         contentView.backgroundColor = UIColor(named: "secondaryBackground")
+         contentView.backgroundColor = R.color.secondaryBackground()
          contentView.addSubview(questionLabel)
          contentView.addSubview(questionText)
          contentView.addSubview(correctAnswer)

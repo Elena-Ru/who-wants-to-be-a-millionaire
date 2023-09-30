@@ -14,6 +14,7 @@ identifier_name:
 excluded:
 - Pods
 - KeychainAccess
+- R.generated.swift
 cyclomatic_complexity:
 - 15 # warning
 function_body_length:

@@ -14,11 +14,11 @@ class LaunchScreenAnimatedViewController: UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
-      view.backgroundColor = UIColor(named: "background")
+      view.backgroundColor = R.color.background()
       let path = createTrianglePath()
      
       for index in 0..<3 {
-        let circle = createCircle(with: UIColor(named: "accent") ?? .tintColor)
+        let circle = createCircle(with: R.color.accent() ?? .tintColor)
         circle.center = pointOnTriangle(for: index)
         view.addSubview(circle)
         animateCircle(circle, along: path, startingAt: CGFloat(index) *   1.0/3.0)

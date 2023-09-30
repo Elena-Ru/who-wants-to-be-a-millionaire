@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RswiftResources
 
 protocol GameViewControllerDelegate: AnyObject {
     
@@ -42,7 +43,7 @@ final class GameViewController: UIViewController {
         super.viewDidLoad()
       
         router = GameRouter(viewController: self)
-        view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = R.color.background()
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
     }
@@ -56,10 +57,10 @@ final class GameViewController: UIViewController {
 
     func configureUI(question: Question) {
         currentResults.session?.currentQuestionNumber.addObserver(self, options: [.new, .initial], closure: { [weak self] (numberOfQuestion, _) in
-          self?.rootView.questionNumberLabel.text = String(format: Texts.question, numberOfQuestion)
+          self?.rootView.questionNumberLabel.text = String(format: R.string.localizable.questionN(numberOfQuestion))
         })
         currentResults.session?.procent.addObserver(self, options: [.new, .initial], closure: { [weak self] (procent, _) in
-            self?.rootView.correctAnswerProcentLabel.text = String(format: Texts.success, procent)
+          self?.rootView.correctAnswerProcentLabel.text = String(format: R.string.localizable.success(procent))
         })
         rootView.questionLabel.text = question.text
         currentQuestion = question
@@ -84,13 +85,13 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell() }
     
         cell.textLabel?.text = currentQuestion?.answers[indexPath.section].text
-        cell.textLabel?.textColor = UIColor(named: "title")
+        cell.textLabel?.textColor = R.color.title()
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     
-        cell.contentView.backgroundColor = UIColor(named: "accent")
+        cell.contentView.backgroundColor = R.color.accent()
         cell.contentView.layer.cornerRadius = 20.0
         cell.contentView.layer.borderWidth = 2
-        cell.contentView.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
+        cell.contentView.layer.borderColor = R.color.darkOrange()?.cgColor
         cell.contentView.clipsToBounds = true
   
         cell.backgroundColor = .clear
@@ -144,7 +145,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
     }
   
     private func finishGameSuccessfully() {
-        router.presentAlert(title: Texts.gameOver, message: Texts.congratulations) {
+        router.presentAlert(title: R.string.localizable.gameOver(), message: R.string.localizable.congratulations()) {
             self.router.closeGame()
             self.gameDelegate?.didEndGame(withResult: Results(procent: self.currentResults.session?.procent.value, correctAnswerCount: self.corAnswer))
         }
@@ -155,7 +156,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     private func handleIncorrectAnswer() {
-        router.presentAlert(title: Texts.wrong, message: Texts.tryAgain) {
+        router.presentAlert(title: R.string.localizable.wrong(), message: R.string.localizable.tryAgain()) {
             self.router.closeGame()
             self.gameDelegate?.didEndGame(withResult: Results(procent: self.currentResults.session?.procent.value, correctAnswerCount: self.corAnswer))
         }
