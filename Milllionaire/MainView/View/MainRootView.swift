@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RswiftResources
 
 final class MainRootView: UIView {
     // MARK: - Constatnts
@@ -26,7 +27,7 @@ final class MainRootView: UIView {
     let logo: UILabel = {
         let label = UILabel()
         label.text = Texts.appName
-        label.textColor = UIColor(named: "title")
+        label.textColor = R.color.title()
         label.font = UIFont.systemFont(ofSize: Constants.logoFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

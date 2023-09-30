@@ -30,6 +30,7 @@
 		B4B303F72934EE9E0053B91A /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303F62934EE9E0053B91A /* Difficulty.swift */; };
 		B4B303F92934F6890053B91A /* ShuffleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303F82934F6890053B91A /* ShuffleStrategy.swift */; };
 		B4B303FB2934FB120053B91A /* MediumQuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B303FA2934FB120053B91A /* MediumQuestionStrategy.swift */; };
+		B4DF94942AC814650091F7A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DF94932AC814650091F7A6 /* R.generated.swift */; };
 		B4EB406729388C5500520181 /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB406629388C5500520181 /* MainRootView.swift */; };
 		B4EB40692938995100520181 /* SettingsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB40682938995100520181 /* SettingsRootView.swift */; };
 		B4EB406B29389EE100520181 /* ResultsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EB406A29389EE100520181 /* ResultsRootView.swift */; };
@@ -86,6 +87,7 @@
 		B4B303F62934EE9E0053B91A /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		B4B303F82934F6890053B91A /* ShuffleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleStrategy.swift; sourceTree = "<group>"; };
 		B4B303FA2934FB120053B91A /* MediumQuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumQuestionStrategy.swift; sourceTree = "<group>"; };
+		B4DF94932AC814650091F7A6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		B4EB406629388C5500520181 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
 		B4EB40682938995100520181 /* SettingsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRootView.swift; sourceTree = "<group>"; };
 		B4EB406A29389EE100520181 /* ResultsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRootView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		B4B303BF2931F70C0053B91A /* Milllionaire */ = {
 			isa = PBXGroup;
 			children = (
+				B4DF94932AC814650091F7A6 /* R.generated.swift */,
 				B4B303C02931F70C0053B91A /* AppDelegate.swift */,
 				B4B303C22931F70C0053B91A /* SceneDelegate.swift */,
 				B43331882ABC92110037EC42 /* Localizable.strings */,
@@ -420,6 +423,7 @@
 			buildConfigurationList = B4B303D42931F70E0053B91A /* Build configuration list for PBXNativeTarget "Milllionaire" */;
 			buildPhases = (
 				5E1894F85ABECF419721A717 /* [CP] Check Pods Manifest.lock */,
+				B4DF94922AC813C10091F7A6 /* ShellScript */,
 				B4B303B92931F70C0053B91A /* Sources */,
 				B4B303BA2931F70C0053B91A /* Frameworks */,
 				B4B303BB2931F70C0053B91A /* Resources */,
@@ -538,6 +542,25 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		B4DF94922AC813C10091F7A6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -549,6 +572,7 @@
 				B4B303E3293291250053B91A /* GameViewController.swift in Sources */,
 				B4EB4087293A635100520181 /* AddNewQuestionTableViewCell.swift in Sources */,
 				B4FB65C12ABF0A3800FA0B2A /* SettingsRouter.swift in Sources */,
+				B4DF94942AC814650091F7A6 /* R.generated.swift in Sources */,
 				B4B303F92934F6890053B91A /* ShuffleStrategy.swift in Sources */,
 				B4B303F22933974E0053B91A /* Result+CoreDataClass.swift in Sources */,
 				B4EB408B293B18C100520181 /* RoundedMainButton.swift in Sources */,

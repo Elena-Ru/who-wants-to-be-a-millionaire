@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RswiftResources
 
 class MainViewController: UIViewController {
     
@@ -42,7 +43,7 @@ class MainViewController: UIViewController {
     // MARK: - Setup
     
     private func setupView() {
-        view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = R.color.background()
     }
     
     private func setupActions() {

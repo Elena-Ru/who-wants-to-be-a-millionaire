@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RswiftResources
 
 class ResultsViewController: UIViewController {
     
@@ -24,10 +25,10 @@ class ResultsViewController: UIViewController {
       
         router = ResultsRouter(viewController: self)
         title = Texts.results
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "title")]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: R.color.title()]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: Texts.dismiss, style: .plain, target: self, action: #selector(dismissSelf))
-        view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = R.color.background()
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
     }

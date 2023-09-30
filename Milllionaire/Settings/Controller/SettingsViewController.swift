@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RswiftResources
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
@@ -23,7 +24,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
       super.viewDidLoad()
     
       router = SettingsRouter(viewController: self)
-      view.backgroundColor = UIColor(named: "background")
+      view.backgroundColor = R.color.background()
       self.title = Texts.settings
       let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
       navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -46,22 +47,22 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
       if indexPath.section == 0 {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = Texts.shuffle
-        cell.textLabel?.textColor = UIColor(named: "text")
+        cell.textLabel?.textColor = R.color.text()
         let shuffleSwitch = UISwitch()
         shuffleSwitch.isOn = setPosition()
         shuffleSwitch.addTarget(self, action: #selector(shuffleSwitchChanged(_:)), for: .valueChanged)
     
         cell.accessoryView = shuffleSwitch
-        cell.backgroundColor = UIColor(named: "secondaryBackground")
+        cell.backgroundColor = R.color.secondaryBackground()
         return cell
       } else {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         cell.textLabel?.text = Texts.colorScheme
-        cell.textLabel?.textColor = UIColor(named: "text")
+        cell.textLabel?.textColor = R.color.text()
         cell.detailTextLabel?.text = selectedTheme
-        cell.detailTextLabel?.textColor = UIColor(named: "text")
+        cell.detailTextLabel?.textColor = R.color.text()
         cell.accessoryType = .disclosureIndicator
-        cell.backgroundColor = UIColor(named: "secondaryBackground")
+        cell.backgroundColor = R.color.secondaryBackground()
         return cell
       }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RswiftResources
 
 protocol GameViewControllerDelegate: AnyObject {
     
@@ -42,7 +43,7 @@ final class GameViewController: UIViewController {
         super.viewDidLoad()
       
         router = GameRouter(viewController: self)
-        view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = R.color.background()
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
     }
@@ -84,13 +85,13 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.identifier, for: indexPath) as? AnswerTableViewCell else { return UITableViewCell() }
     
         cell.textLabel?.text = currentQuestion?.answers[indexPath.section].text
-        cell.textLabel?.textColor = UIColor(named: "title")
+        cell.textLabel?.textColor = R.color.title()
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     
-        cell.contentView.backgroundColor = UIColor(named: "accent")
+        cell.contentView.backgroundColor = R.color.accent()
         cell.contentView.layer.cornerRadius = 20.0
         cell.contentView.layer.borderWidth = 2
-        cell.contentView.layer.borderColor = UIColor(named: "darkOrange")?.cgColor
+        cell.contentView.layer.borderColor = R.color.darkOrange()?.cgColor
         cell.contentView.clipsToBounds = true
   
         cell.backgroundColor = .clear
