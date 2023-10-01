@@ -45,9 +45,9 @@ class AddingQuestionViewController: UIViewController {
         let cell = rootView.tableView.cellForRow(at: indexPath) as? AddQuestionTableViewCell
         let questionText = cell?.questionText.text
         let correctAnswer = cell?.correctAnswer.text
-        let wrongAnswer1  = cell?.wrongAnswer1.text
-        let wrongAnswer2  = cell?.wrongAnswer2.text
-        let wrongAnswer3  = cell?.wrongAnswer3.text
+        let wrongAnswer1 = cell?.wrongAnswer1.text
+        let wrongAnswer2 = cell?.wrongAnswer2.text
+        let wrongAnswer3 = cell?.wrongAnswer3.text
         
         if questionText == "" ||
             correctAnswer == "" ||
@@ -94,7 +94,7 @@ extension AddingQuestionViewController: UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard  let cell = tableView.dequeueReusableCell(withIdentifier: AddQuestionTableViewCell.identifier, for: indexPath) as? AddQuestionTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AddQuestionTableViewCell.identifier, for: indexPath) as? AddQuestionTableViewCell else {
             return UITableViewCell()}
         cell.setupLayout()
         return cell

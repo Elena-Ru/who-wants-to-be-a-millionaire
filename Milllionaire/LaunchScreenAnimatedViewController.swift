@@ -21,7 +21,7 @@ class LaunchScreenAnimatedViewController: UIViewController {
         let circle = createCircle(with: R.color.accent() ?? .tintColor)
         circle.center = pointOnTriangle(for: index)
         view.addSubview(circle)
-        animateCircle(circle, along: path, startingAt: CGFloat(index) *   1.0/3.0)
+        animateCircle(circle, along: path, startingAt: CGFloat(index) * 1.0/3.0)
       }
   }
   

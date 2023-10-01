@@ -26,7 +26,7 @@ final class AddQuestionRootView: UIView {
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         btn.layer.cornerRadius = 20
-        btn.layer.borderColor =  R.color.darkOrange()?.cgColor
+        btn.layer.borderColor = R.color.darkOrange()?.cgColor
         btn.layer.borderWidth = 2.0
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
