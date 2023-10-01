@@ -32,7 +32,7 @@ class QuestionDataCaretracker {
             }
         }
         do {
-             try  context.save()
+             try context.save()
         } catch {
             print(error)
         }
@@ -55,7 +55,7 @@ class QuestionDataCaretracker {
       guard let context = context else { return [] }
       
         do {
-            questionCD =  try context.fetch(QuestionCD.fetchRequest())
+            questionCD = try context.fetch(QuestionCD.fetchRequest())
             questionData = transform(resultsFromCD: self.questionCD!)
         } catch {
             print(error)
@@ -70,7 +70,7 @@ class QuestionDataCaretracker {
             var answersCD = [Answer]()
             let text = $0.text
             let setAnswers = $0.answers
-            let  answArray = setAnswers?.allObjects as? [AnswerCD]
+            let answArray = setAnswers?.allObjects as? [AnswerCD]
             
             answArray?.forEach {
                 let answerText = $0.answerText

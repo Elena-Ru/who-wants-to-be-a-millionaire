@@ -93,7 +93,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
       }
     }
   
-    private  func setPosition() -> Bool {
+    private func setPosition() -> Bool {
       if Game.shared.selectedDifficulty == .easy {
         return false
       } else {

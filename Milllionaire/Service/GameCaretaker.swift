@@ -26,7 +26,7 @@ class GameCaretaker {
             result.correctAnswerCount = Int16($0.correctAnswerCount!)
         }
         do {
-             try  context.save()
+             try context.save()
         } catch {
             print(error)
         }
@@ -47,7 +47,7 @@ class GameCaretaker {
     func loadGame() -> [Results] {
         
         do {
-            resultCD =  try context?.fetch(Result.fetchRequest())
+            resultCD = try context?.fetch(Result.fetchRequest())
             results = transform(resultsFromCD: self.resultCD!)
         } catch {
             print(error)

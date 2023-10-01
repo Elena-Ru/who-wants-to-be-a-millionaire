@@ -23,3 +23,9 @@ file_length:
 - 600 #disable
 type_body_length:
 - 1000 #warning
+custom_rules:
+  multiple_spaces:
+    name: "Multiple Spaces Between Characters"
+    regex: "(?<!^/)\\S {2,}\\S"
+    message: "Avoid using multiple spaces between characters."
+    severity: warning

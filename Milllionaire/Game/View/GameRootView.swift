@@ -47,7 +47,7 @@ final class GameRootView: UIView {
         tableView.register(AnswerTableViewCell.self, forCellReuseIdentifier: AnswerTableViewCell.identifier)
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .clear
-        tableView.contentInset =  .zero
+        tableView.contentInset = .zero
         tableView.layer.cornerRadius = 20.0
         tableView.clipsToBounds = true
         return tableView
